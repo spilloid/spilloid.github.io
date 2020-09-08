@@ -1,0 +1,15 @@
+version : '3.7'
+services: 
+  resume-site:
+      build:
+        context: ./
+        dockerfile: Dockerfile
+      restart: always
+      environment:
+        - VIRTUAL_HOST=spillerstech.xyz
+        - LETSENCRYPT_HOST=spillerstech.xyz
+      networks:
+        nginx-proxy_default:
+networks:
+  nginx-proxy_default:
+    external: true
