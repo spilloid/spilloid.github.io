@@ -21,7 +21,6 @@ p {
 	margin-bottom: 20px;
 	color: #444;
 }
-
 #cv {
 	width: 90%;
 	max-width: 800px;
@@ -71,6 +70,7 @@ p {
 
 #contactDetails {
 	float: right;
+	text-align: right;
 }
 
 #contactDetails ul {
