@@ -1,0 +1,14 @@
+name : CI Staging
+
+on:
+    pull_request:
+        branches: [ master ]
+    push:
+        branches: [ master ]
+jobs:
+    build:
+        runs-on: self-hosted
+        steps:
+            - uses: actions/checkout@v2
+            - name: 
+              run: docker-compose --file docker-compose.yml up -d --build resume-site
