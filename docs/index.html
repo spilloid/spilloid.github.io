@@ -16,6 +16,7 @@
 <![endif]-->
 </head>
 <body id="top">
+<canvas id="campfire-bg"></canvas>
 <div id="cv" class="instaFade">
 	<div class="mainDetails">
 <div id="name">
@@ -194,6 +195,169 @@
 </div>
 <script>
 	feather.replace()
+</script>
+<script>
+(function () {
+	const canvas = document.getElementById('campfire-bg');
+	const ctx = canvas.getContext('2d');
+
+	function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+	resize();
+	window.addEventListener('resize', resize);
+
+	let t = 0;
+
+	// ── Smoke puff ────────────────────────────────────────
+	class Smoke {
+		constructor(init) { this.reset(init); }
+		reset(init) {
+			this.x = (Math.random() - 0.1) * canvas.width * 1.2;
+			this.y = init ? Math.random() * canvas.height : canvas.height + 80 + Math.random() * 100;
+			this.vx = (Math.random() - 0.5) * 0.5;
+			this.vy = -(Math.random() * 0.4 + 0.1);
+			this.r = Math.random() * 160 + 80;
+			this.alpha = init ? Math.random() * 0.28 : 0;
+			this.peak = Math.random() * 0.32 + 0.14;
+			this.fading = init ? Math.random() > 0.4 : false;
+			this.decay = Math.random() * 0.0006 + 0.0003;
+			this.wo = Math.random() * Math.PI * 2;
+			this.ws = (Math.random() - 0.5) * 0.003;
+		}
+		update() {
+			this.wo += this.ws;
+			this.x += this.vx + Math.sin(this.wo) * 0.3;
+			this.y += this.vy;
+			this.r += 0.2;
+			if (!this.fading) {
+				this.alpha = Math.min(this.alpha + 0.002, this.peak);
+				if (this.alpha >= this.peak) this.fading = true;
+			} else {
+				this.alpha -= this.decay;
+			}
+			if (this.alpha <= 0 || this.y < -this.r * 2) this.reset(false);
+		}
+		draw() {
+			if (this.alpha <= 0) return;
+			const hr = Math.max(0, Math.min(1, this.y / canvas.height));
+			const rv = Math.round(38 + 52 * hr);
+			const gv = Math.round(30 + 28 * hr);
+			const bv = Math.round(24 + 8 * hr);
+			const grd = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.r);
+			grd.addColorStop(0,    `rgba(${rv},${gv},${bv},${this.alpha})`);
+			grd.addColorStop(0.5,  `rgba(${rv},${gv},${bv},${this.alpha * 0.4})`);
+			grd.addColorStop(1,    `rgba(${rv},${gv},${bv},0)`);
+			ctx.beginPath();
+			ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+			ctx.fillStyle = grd;
+			ctx.fill();
+		}
+	}
+
+	// ── Ember ─────────────────────────────────────────────
+	class Ember {
+		constructor(init) { this.reset(init); }
+		reset(init) {
+			this.x = Math.random() * canvas.width;
+			this.y = init ? Math.random() * canvas.height : canvas.height + 10;
+			this.vx = (Math.random() - 0.5) * 1.2;
+			this.vy = -(Math.random() * 1.5 + 0.2);
+			this.sz = Math.random() * 1.4 + 0.3;
+			this.life = init ? Math.random() : 1;
+			this.decay = Math.random() * 0.004 + 0.0012;
+			this.flicker = Math.random() * Math.PI * 2;
+			this.frate = Math.random() * 0.15 + 0.06;
+		}
+		update() {
+			this.x += this.vx;
+			this.y += this.vy;
+			this.vx += (Math.random() - 0.5) * 0.06;
+			this.vx *= 0.993;
+			this.flicker += this.frate;
+			this.life -= this.decay;
+			if (this.life <= 0 || this.y < -20) this.reset(false);
+		}
+		draw() {
+			if (this.life <= 0) return;
+			const flick = 0.55 + 0.45 * Math.abs(Math.sin(this.flicker));
+			const a = this.life * flick;
+			const g = Math.round(60 + 195 * this.life);
+			ctx.beginPath();
+			ctx.arc(this.x, this.y, this.sz * (0.5 + 0.5 * flick), 0, Math.PI * 2);
+			ctx.fillStyle = `rgba(255,${g},8,${a})`;
+			ctx.fill();
+			if (a > 0.15) {
+				const hr = this.sz * 7;
+				const halo = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, hr);
+				halo.addColorStop(0, `rgba(255,${g},0,${a * 0.38})`);
+				halo.addColorStop(1, 'rgba(255,30,0,0)');
+				ctx.beginPath();
+				ctx.arc(this.x, this.y, hr, 0, Math.PI * 2);
+				ctx.fillStyle = halo;
+				ctx.fill();
+			}
+		}
+	}
+
+	// ── Sky: warm dark haze throughout, fire glow from below ─
+	function drawSky() {
+		const w = canvas.width, h = canvas.height;
+		const grd = ctx.createLinearGradient(0, 0, 0, h);
+		grd.addColorStop(0,    '#0d0804');
+		grd.addColorStop(0.28, '#180d05');
+		grd.addColorStop(0.52, '#2a1206');
+		grd.addColorStop(0.72, '#4e1c00');
+		grd.addColorStop(0.88, '#7c2800');
+		grd.addColorStop(1,    '#a83200');
+		ctx.fillStyle = grd;
+		ctx.fillRect(0, 0, w, h);
+	}
+
+	// ── Soft fire glow — no spiky columns ────────────────
+	function drawFireGlow() {
+		const w = canvas.width, h = canvas.height;
+		const time = t * 0.014;
+
+		// Gradient band — subtle, wide, no hard edges
+		const intensity = 0.22 + 0.06 * Math.sin(time * 0.75);
+		const bnd = ctx.createLinearGradient(0, h * 0.55, 0, h);
+		bnd.addColorStop(0,   'rgba(180,40,0,0)');
+		bnd.addColorStop(0.45,`rgba(210,65,0,${intensity * 0.5})`);
+		bnd.addColorStop(0.8, `rgba(235,85,5,${intensity})`);
+		bnd.addColorStop(1,   `rgba(255,110,10,${intensity * 1.5})`);
+		ctx.fillStyle = bnd;
+		ctx.fillRect(0, h * 0.55, w, h * 0.45);
+
+		// 3–4 wide radial hot-spots along horizon, softly screen-blended
+		ctx.globalCompositeOperation = 'screen';
+		for (let i = 0; i < 4; i++) {
+			const sx = (i + 0.5) * (w / 4) + Math.sin(time * 1.1 + i * 1.85) * (w / 4) * 0.25;
+			const sr = w * 0.22 + Math.sin(time * 0.85 + i * 2.4) * w * 0.04;
+			const sg = ctx.createRadialGradient(sx, h, 0, sx, h * 0.68, sr);
+			sg.addColorStop(0,   `rgba(255,120,15,${0.12 + 0.04 * Math.sin(time + i)})`);
+			sg.addColorStop(0.5, `rgba(220,60,0,${0.06 + 0.02 * Math.sin(time * 1.2 + i)})`);
+			sg.addColorStop(1,   'rgba(160,20,0,0)');
+			ctx.beginPath();
+			ctx.ellipse(sx, h, sr, sr * 0.55, 0, 0, Math.PI * 2);
+			ctx.fillStyle = sg;
+			ctx.fill();
+		}
+		ctx.globalCompositeOperation = 'source-over';
+	}
+
+	const smokes = Array.from({length: 60}, () => new Smoke(true));
+	const embers = Array.from({length: 140}, () => new Ember(true));
+
+	function animate() {
+		drawSky();
+		smokes.forEach(s => { s.update(); s.draw(); });
+		drawFireGlow();
+		embers.forEach(e => { e.update(); e.draw(); });
+		t++;
+		requestAnimationFrame(animate);
+	}
+
+	animate();
+})();
 </script>
 </body>
 </html>

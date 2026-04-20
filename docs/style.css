@@ -11,7 +11,15 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
 display:block;
 }
 
-html, body {background: #0d0d0d; font-family: 'Lato', helvetica, arial, sans-serif; font-size: 16px; color: #e8e8e8;}
+html, body {background: #0a0805; font-family: 'Lato', helvetica, arial, sans-serif; font-size: 16px; color: #e8e8e8;}
+
+#campfire-bg {
+	position: fixed;
+	top: 0; left: 0;
+	width: 100%; height: 100%;
+	z-index: -1;
+	pointer-events: none;
+}
 
 .clear {clear: both;}
 
@@ -24,14 +32,15 @@ p {
 #cv {
 	width: 90%;
 	max-width: 800px;
-	background: #111;
+	background: rgba(10, 6, 3, 0.88);
 	margin: 30px auto;
+	box-shadow: 0 0 120px rgba(255, 80, 0, 0.14), 0 4px 40px rgba(0,0,0,0.5);
 }
 
 .mainDetails {
 	padding: 25px 35px;
 	border-bottom: 2px solid #ff6535;
-	background: #161616;
+	background: rgba(14, 9, 4, 0.92);
 }
 
 #name h1 {
