@@ -18,11 +18,7 @@
 <body id="top">
 <div id="cv" class="instaFade">
 	<div class="mainDetails">
-		<div id="headshot" class="quickFade">
-			<img src="headshot.jpg" alt="Joseph Spillers" />
-		</div>
-
-		<div id="name">
+<div id="name">
 			<h1 class="quickFade delayTwo">Joseph Spillers</h1>
 			<h2 class="quickFade delayThree">Software Developer</h2>
 		</div>
@@ -103,40 +99,80 @@
 			<div class="sectionContent">
 				<div class="projectGrid">
 
-					<a href="https://github.com/spilloid/JokeBot" class="projectCard" target="_blank" rel="noopener">
-						<div class="projectLang">Python &middot; Docker &middot; MIT</div>
-						<h3>JokeBot</h3>
-						<p>Because someone had to containerize dad jokes. A lightweight Flask API serving randomized jokes &mdash; RESTful, Dockerized, and funnier than it has any right to be.</p>
-						<span class="projectLink"><i data-feather="github"></i> spilloid/JokeBot</span>
-					</a>
+					<div class="projectCardWrapper">
+						<a href="https://spilloid.github.io/ComFlow/" class="projectCard" target="_blank" rel="noopener">
+							<div class="projectCardFront">
+								<div class="projectLang">TypeScript</div>
+								<h3>ComFlow</h3>
+								<p>Voicemail, but make it useful. Turns missed calls into structured work items so your support team stops fishing through audio scraps at 9 AM.</p>
+								<span class="projectLink"><i data-feather="external-link"></i> spilloid.github.io/ComFlow</span>
+							</div>
+							<div class="projectCardBack">
+								<p class="jokeSetup">Why did the voicemail break up with the inbox?</p>
+								<p class="jokePunchline">It said, &ldquo;I just need some space &mdash; and better ticket management.&rdquo;</p>
+							</div>
+						</a>
+					</div>
 
-					<a href="https://github.com/spilloid/vimConfigurator" class="projectCard" target="_blank" rel="noopener">
-						<div class="projectLang">Vim Script</div>
-						<h3>vimConfigurator</h3>
-						<p>For the developer who refuses to use VSCode on principle. A portable, idempotent Vim setup script that makes any machine feel like home &mdash; even a server at 3 AM.</p>
-						<span class="projectLink"><i data-feather="github"></i> spilloid/vimConfigurator</span>
-					</a>
+					<div class="projectCardWrapper">
+						<a href="https://spilloid.github.io/Visitor-Game-Engine/" class="projectCard" target="_blank" rel="noopener">
+							<div class="projectCardFront">
+								<div class="projectLang">C++</div>
+								<h3>Visitor Game Engine</h3>
+								<p>The CS degree flex. A game engine built around the Visitor pattern &mdash; no entity subclasses, no switch statements on type, just clean double dispatch.</p>
+								<span class="projectLink"><i data-feather="external-link"></i> spilloid.github.io/Visitor-Game-Engine</span>
+							</div>
+							<div class="projectCardBack">
+								<p class="jokeSetup">Why do game engines love the Visitor pattern?</p>
+								<p class="jokePunchline">Because every sprite needs a little company.</p>
+							</div>
+						</a>
+					</div>
 
-					<a href="https://github.com/spilloid/pool_sim" class="projectCard" target="_blank" rel="noopener">
-						<div class="projectLang">TypeScript &middot; Node.js &middot; Phaser</div>
-						<h3>pool_sim</h3>
-						<p>Physics, but make it fun. A Phaser-powered pool prototype with coefficient-driven billiards physics that are actually understandable. Surprisingly satisfying to break things with.</p>
-						<span class="projectLink"><i data-feather="github"></i> spilloid/pool_sim</span>
-					</a>
+					<div class="projectCardWrapper">
+						<a href="https://spilloid.github.io/pool_sim/" class="projectCard" target="_blank" rel="noopener">
+							<div class="projectCardFront">
+								<div class="projectLang">TypeScript &middot; Node.js &middot; Phaser</div>
+								<h3>pool_sim</h3>
+								<p>Physics, but make it fun. A Phaser-powered pool prototype with coefficient-driven billiards physics that are actually understandable.</p>
+								<span class="projectLink"><i data-feather="external-link"></i> spilloid.github.io/pool_sim</span>
+							</div>
+							<div class="projectCardBack">
+								<p class="jokeSetup">Why was the pool ball bad at math?</p>
+								<p class="jokePunchline">It kept going on a tangent.</p>
+							</div>
+						</a>
+					</div>
 
-					<a href="https://github.com/spilloid/Deciwatcher" class="projectCard" target="_blank" rel="noopener">
-						<div class="projectLang">CSS &middot; IoT &middot; MIT</div>
-						<h3>Deciwatcher</h3>
-						<p>Noise mapping at scale. A networked IoT concept where devices monitor ambient volume and collaboratively build a real-time acoustic map. Basically surveillance, but for your noisy neighbors.</p>
-						<span class="projectLink"><i data-feather="github"></i> spilloid/Deciwatcher</span>
-					</a>
+					<div class="projectCardWrapper">
+						<a href="https://spilloid.github.io/Deciwatcher/" class="projectCard" target="_blank" rel="noopener">
+							<div class="projectCardFront">
+								<div class="projectLang">CSS &middot; IoT &middot; MIT</div>
+								<h3>Deciwatcher</h3>
+								<p>Noise mapping at scale. A networked IoT concept where devices monitor ambient volume and build a real-time acoustic map. Surveillance, but for your noisy neighbors.</p>
+								<span class="projectLink"><i data-feather="external-link"></i> spilloid.github.io/Deciwatcher</span>
+							</div>
+							<div class="projectCardBack">
+								<p class="jokeSetup">What did one decibel say to the other?</p>
+								<p class="jokePunchline">&ldquo;Stop making such a racket.&rdquo;</p>
+							</div>
+						</a>
+					</div>
 
-					<a href="https://github.com/spilloid/Visitor-Game-Engine" class="projectCard" target="_blank" rel="noopener">
-						<div class="projectLang">C++</div>
-						<h3>Visitor Game Engine</h3>
-						<p>The CS degree flex. A C++ game engine built around the Visitor design pattern &mdash; all sprites live in an abstract scene structure, all game logic lives in visitors. UML-first, code-second.</p>
-						<span class="projectLink"><i data-feather="github"></i> spilloid/Visitor-Game-Engine</span>
-					</a>
+					<div class="projectCardWrapper">
+						<a href="https://github.com/spilloid/JokeBot" class="projectCard" target="_blank" rel="noopener">
+							<div class="projectCardFront">
+								<div class="projectLang">Python &middot; Docker &middot; MIT</div>
+								<h3>JokeBot</h3>
+								<p>Because someone had to containerize dad jokes. A lightweight Flask API serving randomized jokes &mdash; RESTful, Dockerized, and funnier than it has any right to be.</p>
+								<span class="projectLink"><i data-feather="github"></i> spilloid/JokeBot</span>
+							</div>
+							<div class="projectCardBack">
+								<p class="jokeSetup">Why did the API go to therapy?</p>
+								<p class="jokePunchline">Too many bad requests.</p>
+							</div>
+						</a>
+					</div>
 
 				</div>
 			</div>
