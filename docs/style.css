@@ -57,32 +57,49 @@ p {
 
 #contactDetails {
 	float: right;
-	text-align: right;
+	display: flex;
+	align-items: flex-end;
+	height: 100%;
+	padding-bottom: 4px;
 }
 
-#contactDetails ul {
-	list-style-type: none;
-	font-size: 0.9em;
-	margin-top: 2px;
+.iconRow {
+	display: flex;
+	align-items: center;
+	gap: 6px;
 }
 
-#contactDetails ul li {
-	margin-bottom: 3px;
-	color: #999;
-}
-
-#contactDetails ul li a, a[href^=tel] {
-	color: #999;
+.iconChip {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 34px;
+	height: 34px;
+	border-radius: 8px;
+	background: rgba(255,255,255,0.04);
+	color: #888;
 	text-decoration: none;
-	-webkit-transition: all .3s ease-in;
-	-moz-transition: all .3s ease-in;
-	-o-transition: all .3s ease-in;
-	-ms-transition: all .3s ease-in;
-	transition: all .3s ease-in;
+	border: 1px solid rgba(255,255,255,0.08);
+	cursor: default;
+	transition: background 0.2s, color 0.2s, border-color 0.2s;
 }
 
-#contactDetails ul li a:hover {
+a.iconChip {
+	cursor: pointer;
+}
+
+a.iconChip:hover {
+	background: rgba(255, 101, 53, 0.12);
 	color: #ff6535;
+	border-color: rgba(255, 101, 53, 0.28);
+}
+
+.iconDivider {
+	width: 1px;
+	height: 20px;
+	background: rgba(255,255,255,0.1);
+	margin: 0 2px;
+	flex-shrink: 0;
 }
 
 
