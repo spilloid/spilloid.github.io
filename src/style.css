@@ -11,7 +11,15 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
 display:block;
 }
 
-html, body {background: #181818; font-family: 'Lato', helvetica, arial, sans-serif; font-size: 16px; color: #222;}
+html, body {background: #0a0805; font-family: 'Lato', helvetica, arial, sans-serif; font-size: 16px; color: #e8e8e8;}
+
+#campfire-bg {
+	position: fixed;
+	top: 0; left: 0;
+	width: 100%; height: 100%;
+	z-index: -1;
+	pointer-events: none;
+}
 
 .clear {clear: both;}
 
@@ -19,19 +27,20 @@ p {
 	font-size: 1em;
 	line-height: 1.4em;
 	margin-bottom: 20px;
-	color: #444;
+	color: #b0b0b0;
 }
 #cv {
 	width: 90%;
 	max-width: 800px;
-	background: #f3f3f3;
+	background: rgba(10, 6, 3, 0.88);
 	margin: 30px auto;
+	box-shadow: 0 0 120px rgba(255, 80, 0, 0.14), 0 4px 40px rgba(0,0,0,0.5);
 }
 
 .mainDetails {
 	padding: 25px 35px;
-	border-bottom: 2px solid #cf8a05;
-	background: #ededed;
+	border-bottom: 2px solid #ff6535;
+	background: rgba(14, 9, 4, 0.92);
 }
 
 #name h1 {
@@ -51,56 +60,60 @@ p {
 	padding: 0 40px;
 }
 
-#headshot {
-	width: 12.5%;
-	float: left;
-	margin-right: 30px;
-}
-
-#headshot img {
-	width: 100%;
-	height: auto;
-	-webkit-border-radius: 50px;
-	border-radius: 50px;
-}
-
 #name {
 	float: left;
 }
 
 #contactDetails {
 	float: right;
-	text-align: right;
+	display: flex;
+	align-items: flex-end;
+	height: 100%;
+	padding-bottom: 4px;
 }
 
-#contactDetails ul {
-	list-style-type: none;
-	font-size: 0.9em;
-	margin-top: 2px;
+.iconRow {
+	display: flex;
+	align-items: center;
+	gap: 6px;
 }
 
-#contactDetails ul li {
-	margin-bottom: 3px;
-	color: #444;
-}
-
-#contactDetails ul li a, a[href^=tel] {
-	color: #444; 
+.iconChip {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 34px;
+	height: 34px;
+	border-radius: 8px;
+	background: rgba(255,255,255,0.04);
+	color: #888;
 	text-decoration: none;
-	-webkit-transition: all .3s ease-in;
-	-moz-transition: all .3s ease-in;
-	-o-transition: all .3s ease-in;
-	-ms-transition: all .3s ease-in;
-	transition: all .3s ease-in;
+	border: 1px solid rgba(255,255,255,0.08);
+	cursor: default;
+	transition: background 0.2s, color 0.2s, border-color 0.2s;
 }
 
-#contactDetails ul li a:hover { 
-	color: #cf8a05;
+a.iconChip {
+	cursor: pointer;
+}
+
+a.iconChip:hover {
+	background: rgba(255, 101, 53, 0.12);
+	color: #ff6535;
+	border-color: rgba(255, 101, 53, 0.28);
+}
+
+.iconDivider {
+	width: 1px;
+	height: 20px;
+	background: rgba(255,255,255,0.1);
+	margin: 0 2px;
+	flex-shrink: 0;
 }
 
 
 section {
-	border-top: 1px solid #dedede;
+	border-top: 1px solid #252525;
 	padding: 20px 0 0;
 }
 
@@ -126,19 +139,21 @@ section:last-child {
 	font-family: 'Rokkitt', Helvetica, Arial, sans-serif;
 	font-style: italic;
 	font-size: 1.5em;
-	color: #cf8a05;
+	color: #ff6535;
 }
 
 .sectionContent h2 {
 	font-family: 'Rokkitt', Helvetica, Arial, sans-serif;
 	font-size: 1.5em;
 	margin-bottom: -2px;
+	color: #e8e8e8;
 }
 
 .subDetails {
 	font-size: 0.8em;
 	font-style: italic;
 	margin-bottom: 3px;
+	color: #777;
 }
 
 .keySkills {
@@ -155,15 +170,323 @@ section:last-child {
 	margin-bottom: 3px;
 }
 
+/* ── Hero tagline ──────────────────────────────────────── */
+
+.heroTag {
+	font-family: 'Rokkitt', Helvetica, Arial, sans-serif;
+	font-style: italic;
+	font-size: 1.05em;
+	color: #c98e6f;
+	margin: 4px 0 0 2px;
+}
+
+/* ── What I Build ──────────────────────────────────────── */
+
+.buildGrid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 12px;
+	margin: 6px 0 18px;
+}
+
+.buildCard {
+	background: rgba(26, 26, 26, 0.55);
+	border: 1px solid #2a2a2a;
+	border-radius: 4px;
+	padding: 12px 14px;
+}
+
+.buildCard h4 {
+	font-family: 'Rokkitt', Helvetica, Arial, sans-serif;
+	font-size: 1.05em;
+	color: #ff8055;
+	margin-bottom: 4px;
+}
+
+.buildCard p {
+	font-size: 0.82em;
+	color: #999;
+	line-height: 1.4em;
+	margin: 0;
+}
+
+.noteCallout {
+	font-size: 0.9em;
+	color: #c8b8a8;
+	background: rgba(255, 101, 53, 0.06);
+	border: 1px solid rgba(255, 101, 53, 0.18);
+	border-radius: 4px;
+	padding: 12px 14px;
+	line-height: 1.5em;
+	margin-bottom: 10px;
+}
+
+/* ── Role bullets ──────────────────────────────────────── */
+
+.roleBullets {
+	list-style: none;
+	margin: 6px 0 4px;
+}
+
+.roleBullets li {
+	position: relative;
+	font-size: 0.86em;
+	color: #a0a0a0;
+	line-height: 1.4em;
+	margin-bottom: 5px;
+	padding-left: 15px;
+}
+
+.roleBullets li:before {
+	content: '\25B8';
+	position: absolute;
+	left: 0;
+	color: #ff6535;
+}
+
+/* ── Lane A: case studies ──────────────────────────────── */
+
+.laneNote {
+	font-size: 0.8em;
+	font-style: italic;
+	color: #8a6a55;
+	border-left: 2px solid rgba(255, 101, 53, 0.4);
+	padding-left: 10px;
+	margin-bottom: 16px;
+	line-height: 1.4em;
+}
+
+.caseStudyList {
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+	margin-bottom: 20px;
+}
+
+.caseStudy {
+	background: #141414;
+	border: 1px solid #2a2a2a;
+	border-top: 3px solid #ff6535;
+	border-radius: 4px;
+	padding: 16px 18px;
+}
+
+.caseStudyHead {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	gap: 10px;
+	flex-wrap: wrap;
+	margin-bottom: 8px;
+}
+
+.caseStudy h3 {
+	font-family: 'Rokkitt', Helvetica, Arial, sans-serif;
+	font-size: 1.25em;
+	color: #e8e8e8;
+}
+
+.csBadge {
+	font-size: 0.66em;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	color: #b9856a;
+	border: 1px solid rgba(255, 101, 53, 0.3);
+	border-radius: 999px;
+	padding: 3px 10px;
+	white-space: nowrap;
+}
+
+.csMeta {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4px 18px;
+	margin-bottom: 8px;
+}
+
+.csMeta span {
+	font-size: 0.76em;
+	color: #999;
+}
+
+.csMeta b {
+	color: #ff8055;
+	font-weight: 400;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	font-size: 0.92em;
+	margin-right: 5px;
+}
+
+.caseStudy p {
+	font-size: 0.86em;
+	color: #a0a0a0;
+	line-height: 1.45em;
+	margin-bottom: 8px;
+}
+
+.csImpact {
+	color: #d3c0b0;
+}
+
+.csShows {
+	font-size: 0.8em;
+	color: #888;
+	margin: 0;
+}
+
+.csShows b {
+	color: #ff8055;
+	font-weight: 400;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	margin-right: 5px;
+}
+
+/* ── Skills (grouped) ──────────────────────────────────── */
+
+.skillGroups {
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+	margin-bottom: 20px;
+}
+
+.skillGroup h4 {
+	font-family: 'Rokkitt', Helvetica, Arial, sans-serif;
+	font-size: 1.1em;
+	color: #ff8055;
+	margin-bottom: 3px;
+}
+
+.skillGroup p {
+	font-size: 0.84em;
+	color: #999;
+	line-height: 1.5em;
+	margin: 0;
+}
+
+/* ── Project Cards ─────────────────────────────────────── */
+
+.projectGrid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 14px;
+	margin-bottom: 20px;
+}
+
+.projectCardWrapper {
+	perspective: 800px;
+}
+
+.projectCard {
+	display: block;
+	background: #1a1a1a;
+	border: 1px solid #2a2a2a;
+	border-left: 3px solid #ff6535;
+	border-radius: 4px;
+	padding: 14px 16px;
+	text-decoration: none;
+	color: inherit;
+	position: relative;
+	transform-style: preserve-3d;
+	transition: transform 0.5s ease, border-color .2s ease, background .2s ease;
+}
+
+.projectCardWrapper:hover .projectCard {
+	transform: rotateY(180deg);
+}
+
+.projectCard:hover {
+	background: #222;
+	border-left-color: #ff8055;
+}
+
+.projectCardFront,
+.projectCardBack {
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+}
+
+.projectCardBack {
+	position: absolute;
+	inset: 0;
+	transform: rotateY(180deg);
+	background: #ff6535;
+	border-radius: 4px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 16px;
+	text-align: center;
+}
+
+.jokeSetup {
+	color: rgba(255,255,255,0.85);
+	font-size: 0.85em;
+	margin-bottom: 10px;
+	line-height: 1.4em;
+}
+
+.jokePunchline {
+	color: #fff;
+	font-weight: 700;
+	font-size: 0.9em;
+	line-height: 1.4em;
+}
+
+.projectCard h3 {
+	font-family: 'Rokkitt', Helvetica, Arial, sans-serif;
+	font-size: 1.15em;
+	color: #e8e8e8;
+	margin-bottom: 5px;
+}
+
+.projectCard p {
+	font-size: 0.85em;
+	color: #888;
+	line-height: 1.4em;
+	margin-bottom: 10px;
+}
+
+.projectLang {
+	font-size: 0.72em;
+	color: #ff6535;
+	font-style: italic;
+	margin-bottom: 4px;
+	text-transform: uppercase;
+	letter-spacing: .04em;
+}
+
+.projectLink {
+	display: inline-flex;
+	align-items: center;
+	gap: 5px;
+	font-size: 0.78em;
+	color: #555;
+}
+
+.projectLink svg {
+	width: 12px;
+	height: 12px;
+}
+
+/* ── Responsive ────────────────────────────────────────── */
+
 @media all and (min-width: 602px) and (max-width: 800px) {
-	#headshot {
-		display: none;
-	}
-	
 	.keySkills {
 	-moz-column-count:2;
 	-webkit-column-count:2;
 	column-count:2;
+	}
+
+	.projectGrid {
+		grid-template-columns: 1fr;
+	}
+
+	.buildGrid {
+		grid-template-columns: 1fr;
 	}
 }
 
@@ -173,31 +496,35 @@ section:last-child {
 		margin: 10px auto;
 		min-width: 280px;
 	}
-	
-	#headshot {
-		display: none;
-	}
-	
+
 	#name, #contactDetails {
 		float: none;
 		width: 100%;
 		text-align: center;
 	}
-	
+
 	.sectionTitle, .sectionContent {
 		float: none;
 		width: 100%;
 	}
-	
+
 	.sectionTitle {
 		margin-left: -2px;
 		font-size: 1.25em;
 	}
-	
+
 	.keySkills {
 		-moz-column-count:2;
 		-webkit-column-count:2;
 		column-count:2;
+	}
+
+	.projectGrid {
+		grid-template-columns: 1fr;
+	}
+
+	.buildGrid {
+		grid-template-columns: 1fr;
 	}
 }
 
@@ -205,22 +532,22 @@ section:last-child {
 	.mainDetails {
 		padding: 15px 15px;
 	}
-	
+
 	section {
 		padding: 15px 0 0;
 	}
-	
+
 	#mainArea {
 		padding: 0 25px;
 	}
 
-	
+
 	.keySkills {
 	-moz-column-count:1;
 	-webkit-column-count:1;
 	column-count:1;
 	}
-	
+
 	#name h1 {
 		line-height: .8em;
 		margin-bottom: 4px;
@@ -230,6 +557,12 @@ section:last-child {
 @media print {
     #cv {
         width: 100%;
+    }
+
+    .projectCard,
+    .caseStudy,
+    .buildCard {
+        break-inside: avoid;
     }
 }
 
@@ -300,11 +633,11 @@ section:last-child {
     -webkit-animation-name: reset, fade-in;
     -webkit-animation-duration: 1.5s;
     -webkit-animation-timing-function: ease-in;
-	
+
 	-moz-animation-name: reset, fade-in;
     -moz-animation-duration: 1.5s;
     -moz-animation-timing-function: ease-in;
-	
+
 	animation-name: reset, fade-in;
     animation-duration: 1.5s;
     animation-timing-function: ease-in;
@@ -314,16 +647,16 @@ section:last-child {
     -webkit-animation-name: reset, fade-in;
     -webkit-animation-duration: 2.5s;
     -webkit-animation-timing-function: ease-in;
-	
+
 	-moz-animation-name: reset, fade-in;
     -moz-animation-duration: 2.5s;
     -moz-animation-timing-function: ease-in;
-	
+
 	animation-name: reset, fade-in;
     animation-duration: 2.5s;
     animation-timing-function: ease-in;
 }
- 
+
 .delayOne {
 	-webkit-animation-delay: 0, .5s;
 	-moz-animation-delay: 0, .5s;

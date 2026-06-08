@@ -1,49 +1,64 @@
-# Joseph Spillers Resume Site
+# Joseph Spillers — Resume Site
 
-This repo is my resume site on the internet, which is a very normal and not-at-all dramatic place to keep a career summary.
+The portfolio/resume site for Joseph Spillers, framed around what the work
+actually is: **support automation, internal tools, and platform operations
+engineering** — a CS-trained support specialist who builds the dashboards,
+automation, data pipelines, and workflow systems that make support and
+production operations faster, more measurable, and less human-fragile.
 
-It is a lightweight static site built with plain HTML and CSS, with just enough flourish to feel human.
+It's a lightweight static site built with plain HTML and CSS, plus a small
+canvas script for the campfire background. No frameworks — the site is meant
+to be a portfolio piece in its own right.
 
-## What's here
+## Structure
 
-- `src/` contains the main site files used by the Docker/Nginx setup.
-- `docs/` contains the static files for GitHub Pages-style hosting.
-- `index.html` at the repo root exists as a tiny entry point.
-- `Dockerfile` serves the site with Nginx.
-- `docker-compose.yml` includes a simple container setup for deployment.
+The page is organized to read as evidence, not a GitHub dump:
+
+1. **Hero / positioning** — Support Automation & Internal Tools Engineer.
+2. **What I Build** — the categories of work, plus an honest note on title vs. scope.
+3. **Experience** — professional roles, with One View detailed via bullets.
+4. **Professional Systems** (Lane A) — sanitized case studies of employer-owned,
+   private internal tooling. No source links; descriptions only.
+5. **Public Portfolio** (Lane B) — personal, open-source projects with live
+   demos and source on GitHub.
+6. **Skills** — grouped by value (support, automation, data, infra, AI).
+7. **Education.**
+
+The two project lanes are kept strictly separate by design: internal/private
+work and public repos never share a grid.
+
+## Files
+
+- `src/` — main site files used by the Docker/Nginx setup.
+- `docs/` — static files served by GitHub Pages (the deployed copy).
+- `docs/CNAME` — custom domain (`spillerstech.us`).
+- `index.html` at the repo root — tiny redirect entry point.
+- `Dockerfile` / `docker-compose.yml` — Nginx container for local serving.
+
+`src/` and `docs/` are kept in sync. Edit the deployed copy in `docs/`, then
+mirror the same changes into `src/` (or copy `docs/index.html` and
+`docs/style.css` over).
 
 ## Stack
 
-- HTML
-- CSS
-- Nginx
-- A headshot
-- Mild audacity
+- HTML / CSS
+- A little vanilla canvas (the campfire background)
+- Nginx (for the Docker path)
+- Feather Icons + Google Fonts
 
 ## Local use
 
-If you want to run it in Docker:
+Docker:
 
 ```bash
 docker compose up --build
 ```
 
-Then open the site through whatever host/port mapping your environment provides.
-
-If you just want to edit the page, the main content lives in:
-
-- `src/index.html`
-- `src/style.css`
-
-If you're publishing through GitHub Pages, make sure the matching files in `docs/` stay in sync too.
+Or just open `docs/index.html` directly in a browser.
 
 ## Notes
 
-- The site is intentionally simple, readable, and fast.
-- Icons are provided with Feather Icons.
-- Fonts are loaded from Google Fonts.
-- The deployed version is meant to be a resume first and a code flex second.
-
-## Why this repo exists
-
-Because sending people a link is easier than attaching seventeen slightly different resume files named things like `Resume-Final-ActuallyFinal2.pdf`.
+- Tone is confident, concrete, evidence-driven — receipts over adjectives.
+- Lane A descriptions are sanitized: no client names, dealer numbers, internal
+  hostnames, or anything that shouldn't be public.
+- The deployed version is a resume first and a code flex second.

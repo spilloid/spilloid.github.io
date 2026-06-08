@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Joseph Spillers</title>
+<title>Joseph Spillers &mdash; Support Automation &amp; Internal Tools Engineer</title>
 
 <meta name="viewport" content="width=device-width"/>
-<meta name="description" content="The Curriculum Vitae of Joseph Spillers."/>
+<meta name="description" content="Joseph Spillers — Support Automation & Internal Tools Engineer. A computer-science-trained support specialist who builds dashboards, automation, data pipelines, and workflow tooling that make support and production operations faster, more measurable, and less human-fragile."/>
 <meta charset="UTF-8">
+
+<meta property="og:title" content="Joseph Spillers — Support Automation & Internal Tools Engineer"/>
+<meta property="og:description" content="CS-trained support specialist who builds internal tools, observability, automation, and data pipelines for support and production operations."/>
+<meta property="og:type" content="website"/>
 
 <link type="text/css" rel="stylesheet" href="style.css">
 <link href='https://fonts.googleapis.com/css?family=Rokkitt:400,700|Lato:400,300' rel='stylesheet' type='text/css'>
@@ -19,9 +23,10 @@
 <canvas id="campfire-bg"></canvas>
 <div id="cv" class="instaFade">
 	<div class="mainDetails">
-<div id="name">
+		<div id="name">
 			<h1 class="quickFade delayTwo">Joseph Spillers</h1>
-			<h2 class="quickFade delayThree">Platform Engineer &amp; AI Orchestrator</h2>
+			<h2 class="quickFade delayThree">Support Automation &amp; Internal Tools Engineer</h2>
+			<p class="heroTag quickFade delayFour">I turn support pain into working tools.</p>
 		</div>
 
 		<div id="contactDetails" class="quickFade delayFour">
@@ -39,30 +44,61 @@
 	</div>
 
 	<div id="mainArea" class="quickFade delayFive">
+
+		<!-- ── What I Build ─────────────────────────────────── -->
 		<section>
-			<article>
-				<div class="sectionTitle">
-					<h1>Personal Profile</h1>
+			<div class="sectionTitle">
+				<h1>What I Build</h1>
+			</div>
+
+			<div class="sectionContent">
+				<p>I work at the intersection of technical support, operations, automation, and internal tooling. In my current role I support dealership document workflows &mdash; scan stations, WebScan, Vault, PaperFlow, spooler services, customer data feeds, and production processing &mdash; and build the tools that reduce manual effort, improve visibility, and make repeated workflows easier to execute and explain.</p>
+				<p>I'm strongest where the problem isn't cleanly contained inside one system. I like owning the messy middle: the scripts, dashboards, data checks, runbooks, and workflow fixes that help a team actually operate.</p>
+
+				<div class="buildGrid">
+					<div class="buildCard">
+						<h4>Internal Tools &amp; Dashboards</h4>
+						<p>Workflow tools and operational dashboards that surface support and production metrics.</p>
+					</div>
+					<div class="buildCard">
+						<h4>Automation &amp; Scripting</h4>
+						<p>PowerShell, Python, and CLI utilities that standardize endpoints and kill repetitive work.</p>
+					</div>
+					<div class="buildCard">
+						<h4>Data &amp; Observability</h4>
+						<p>Pipelines, validation, and Grafana/Postgres stacks that make operations measurable.</p>
+					</div>
+					<div class="buildCard">
+						<h4>Workflow &amp; Runbook Systems</h4>
+						<p>Runbooks, provisioning, and escalation paths that make support repeatable and teachable.</p>
+					</div>
 				</div>
 
-				<div class="sectionContent">
-					<p>Platform engineer in form, if not always in title. I automate before I escalate, model before I build, and lean into AI as a genuine collaborator &mdash; orchestrating Claude, ChatGPT, and Grok as persona-driven agents toward faster, smarter workloads. Clear systems thinking over clever code. UML first, read the error before panicking.</p>
-				</div>
-			</article>
+				<p class="noteCallout">Although my title is Help Desk Support Specialist, much of my current work sits closer to support engineering and internal platform operations &mdash; building the tools, dashboards, scripts, and workflows that make support and production work observable, repeatable, and automatable.</p>
+			</div>
 			<div class="clear"></div>
 		</section>
 
 
+		<!-- ── Professional Experience ──────────────────────── -->
 		<section>
 			<div class="sectionTitle">
-				<h1>Work Experience</h1>
+				<h1>Experience</h1>
 			</div>
 
 			<div class="sectionContent">
 				<article>
 					<h2>Help Desk Support Specialist &mdash; One View, Inc.</h2>
 					<p class="subDetails">Dec 2025 &ndash; Present &middot; Indianapolis, Hybrid</p>
-					<p>Serve as frontline technical and product resource for enterprise clients adopting One View's document and workflow platform. Resolve platform issues, guide onboarding, and maintain high service quality across a varied client base. Bridge the gap between non-technical end users and internal implementation and product teams &mdash; translating defects into clear escalation paths and translating technical concepts into actionable guidance. Contribute to ongoing improvement of support and onboarding processes.</p>
+					<p>Support and improve dealership document-management workflows across scan stations, WebScan, Vault, PaperFlow, spooler services, customer data feeds, and production-processing workflows. Alongside frontline support, I build tooling that makes those workflows faster, more observable, and less human-fragile.</p>
+					<ul class="roleBullets">
+						<li>Built internal support tooling to standardize workstation setup, scanner workflows, decommissioning, and support procedures.</li>
+						<li>Created operational dashboards to surface support and production metrics.</li>
+						<li>Developed automation scripts and utilities to reduce repetitive support tasks and improve consistency across endpoints.</li>
+						<li>Built and maintained documentation and runbooks for repeatable workflows, escalation paths, and operational procedures.</li>
+						<li>Used operational case data and saved searches to identify recurring issues, monitor missing feeds and no-scan accounts, and prioritize follow-up.</li>
+						<li>Collaborated across support, production, operations, and leadership to improve visibility into recurring workflow failures.</li>
+					</ul>
 				</article>
 				<article>
 					<h2>Technical Support Specialist II &mdash; Resultant</h2>
@@ -88,12 +124,83 @@
 			<div class="clear"></div>
 		</section>
 
+		<!-- ── Lane A: Professional Systems & Internal Tools ── -->
 		<section>
 			<div class="sectionTitle">
-				<h1>Projects</h1>
+				<h1>Professional Systems</h1>
 			</div>
 
 			<div class="sectionContent">
+				<p class="laneNote">Selected employer-owned / internal projects. Code is private; descriptions are sanitized case studies, not source.</p>
+
+				<div class="caseStudyList">
+
+					<div class="caseStudy">
+						<div class="caseStudyHead">
+							<h3>pyark</h3>
+							<span class="csBadge">Private &middot; Internal</span>
+						</div>
+						<div class="csMeta">
+							<span><b>Role</b> Builder</span>
+							<span><b>Stack</b> Python &middot; streaming processing &middot; validation</span>
+						</div>
+						<p>High-performance DMS archive processing engine. Ingests raw monthly archive streams, detects and splits document boundaries in a single streaming pass, preserves the source, and stages structured output for downstream ingestion &mdash; turning fragile production steps into observable, testable software.</p>
+						<p class="csImpact">~68&times; faster than the legacy ingestion pipeline it replaced. Passed senior-developer code review, identified and fixed a real document-boundary bug in the process, and shipped through v0.0.3.</p>
+						<p class="csShows"><b>Shows</b> Performance engineering and correctness under real production constraints.</p>
+					</div>
+
+					<div class="caseStudy">
+						<div class="caseStudyHead">
+							<h3>OV-Observability-Stack</h3>
+							<span class="csBadge">Private &middot; In Production</span>
+						</div>
+						<div class="csMeta">
+							<span><b>Role</b> Builder / Maintainer</span>
+							<span><b>Stack</b> Grafana &middot; Postgres 16 &middot; Caddy &middot; Docker</span>
+						</div>
+						<p>Self-hosted observability stack for application dashboarding, with LAN-vs-external access handling. In production and leadership-approved &mdash; drives the live operational dashboards displayed on the floor.</p>
+						<p class="csShows"><b>Shows</b> Self-hosted platform operations: monitoring, access control, and turning metrics into shared, visible signal.</p>
+					</div>
+
+					<div class="caseStudy">
+						<div class="caseStudyHead">
+							<h3>Floorplan-Reconciliation</h3>
+							<span class="csBadge">Private &middot; Internal</span>
+						</div>
+						<div class="csMeta">
+							<span><b>Role</b> Owner</span>
+							<span><b>Stack</b> Python &middot; data validation</span>
+						</div>
+						<p>DMS / accounting reconciliation automation. Took ownership of a monthly reconciliation process and rebuilt it into fast, validated, observable PASS/FAIL automation that turns messy exports into trustworthy results.</p>
+						<p class="csShows"><b>Shows</b> End-to-end ownership of a recurring operational process, with correctness made visible.</p>
+					</div>
+
+					<div class="caseStudy">
+						<div class="caseStudyHead">
+							<h3>OneView-Support-Platform</h3>
+							<span class="csBadge">Private &middot; Internal</span>
+						</div>
+						<div class="csMeta">
+							<span><b>Role</b> Builder / Maintainer</span>
+							<span><b>Stack</b> PowerShell &middot; .NET</span>
+						</div>
+						<p>Source of truth for support operations: runbooks, deployment automation, workstation provisioning, and operational tooling &mdash; the system that makes day-to-day support repeatable and teachable.</p>
+						<p class="csShows"><b>Shows</b> Operational knowledge systems and automation that scale a team's capability, not just an individual's.</p>
+					</div>
+
+				</div>
+			</div>
+			<div class="clear"></div>
+		</section>
+
+		<!-- ── Lane B: Public Engineering Portfolio ─────────── -->
+		<section>
+			<div class="sectionTitle">
+				<h1>Public Portfolio</h1>
+			</div>
+
+			<div class="sectionContent">
+				<p class="laneNote">Personal, open-source projects &mdash; links go to live demos and source on GitHub.</p>
 				<div class="projectGrid">
 
 					<div class="projectCardWrapper">
@@ -116,7 +223,7 @@
 							<div class="projectCardFront">
 								<div class="projectLang">C++</div>
 								<h3>Visitor Game Engine</h3>
-								<p>The CS degree flex. A game engine built around the Visitor pattern &mdash; no entity subclasses, no switch statements on type, just clean double dispatch.</p>
+								<p>The CS degree flex. A game engine where every behavior is a Visitor and every entity a Sprite &mdash; no entity subclasses, no switch statements on type, just clean double dispatch.</p>
 								<span class="projectLink"><i data-feather="external-link"></i> spilloid.github.io/Visitor-Game-Engine</span>
 							</div>
 							<div class="projectCardBack">
@@ -131,7 +238,7 @@
 							<div class="projectCardFront">
 								<div class="projectLang">TypeScript &middot; Node.js &middot; Phaser</div>
 								<h3>pool_sim</h3>
-								<p>Physics, but make it fun. A Phaser-powered pool prototype with coefficient-driven billiards physics that are actually understandable.</p>
+								<p>Physics, but make it fun. A Phaser-powered billiards prototype focused on understandable, coefficient-driven physics over full rule simulation.</p>
 								<span class="projectLink"><i data-feather="external-link"></i> spilloid.github.io/pool_sim</span>
 							</div>
 							<div class="projectCardBack">
@@ -146,7 +253,7 @@
 							<div class="projectCardFront">
 								<div class="projectLang">CSS &middot; IoT &middot; MIT</div>
 								<h3>Deciwatcher</h3>
-								<p>Noise mapping at scale. A networked IoT concept where devices monitor ambient volume and build a real-time acoustic map. Surveillance, but for your noisy neighbors.</p>
+								<p>Noise mapping at scale. Distributed ambient-noise monitoring for shared workspaces that builds a real-time acoustic map. Surveillance, but for your noisy neighbors.</p>
 								<span class="projectLink"><i data-feather="external-link"></i> spilloid.github.io/Deciwatcher</span>
 							</div>
 							<div class="projectCardBack">
@@ -171,11 +278,60 @@
 						</a>
 					</div>
 
+					<div class="projectCardWrapper">
+						<a href="https://github.com/spilloid/spilloid.github.io" class="projectCard" target="_blank" rel="noopener">
+							<div class="projectCardFront">
+								<div class="projectLang">HTML &middot; CSS &middot; Canvas</div>
+								<h3>spilloid.github.io</h3>
+								<p>This resume site. Hand-built static page with a custom canvas campfire and zero frameworks &mdash; because the portfolio should itself be a portfolio piece.</p>
+								<span class="projectLink"><i data-feather="github"></i> spilloid/spilloid.github.io</span>
+							</div>
+							<div class="projectCardBack">
+								<p class="jokeSetup">Why did the resume site refuse a template?</p>
+								<p class="jokePunchline">It had too much character.</p>
+							</div>
+						</a>
+					</div>
+
 				</div>
 			</div>
 			<div class="clear"></div>
 		</section>
 
+		<!-- ── Skills ───────────────────────────────────────── -->
+		<section>
+			<div class="sectionTitle">
+				<h1>Skills</h1>
+			</div>
+
+			<div class="sectionContent">
+				<div class="skillGroups">
+					<div class="skillGroup">
+						<h4>Support Engineering &amp; Operations</h4>
+						<p>Technical support &middot; escalation handling &middot; workflow troubleshooting &middot; scan-station support &middot; documentation &amp; runbooks &middot; customer-facing resolution &middot; endpoint provisioning</p>
+					</div>
+					<div class="skillGroup">
+						<h4>Automation &amp; Internal Tools</h4>
+						<p>Python &middot; PowerShell &middot; Go &middot; .NET / WinForms &middot; C# &middot; browser automation &middot; CLI tools &middot; desktop utilities &middot; workflow automation &middot; task scripting</p>
+					</div>
+					<div class="skillGroup">
+						<h4>Data &amp; Observability</h4>
+						<p>DuckDB &middot; dbt concepts &middot; Postgres &middot; Grafana &middot; operational dashboards &middot; support metrics &middot; reporting pipelines &middot; CSV/data ingestion &middot; KPI tracking</p>
+					</div>
+					<div class="skillGroup">
+						<h4>Infrastructure &amp; Systems</h4>
+						<p>Windows &middot; Linux &middot; Docker &middot; GitHub Actions &middot; homelab infrastructure &middot; RMM concepts &middot; monitoring &middot; networking fundamentals &middot; Proxmox</p>
+					</div>
+					<div class="skillGroup">
+						<h4>AI-Assisted Engineering</h4>
+						<p>Claude Code &middot; AI-assisted prototyping &middot; documentation generation &middot; test planning &middot; code-review support &middot; workflow design &mdash; AI as a force multiplier, not a substitute for judgment.</p>
+					</div>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</section>
+
+		<!-- ── Education ────────────────────────────────────── -->
 		<section>
 			<div class="sectionTitle">
 				<h1>Education</h1>
