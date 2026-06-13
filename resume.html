@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Joseph Spillers — Resume</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rokkitt:wght@500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:      #1b1b1b;
+    --soft:     #444;
+    --faint:    #6b6b6b;
+    --accent:   #b8400d;   /* ember */
+    --accent-d: #7d2b08;
+    --rule:     #e2ddd6;
+    --rule-d:   #c9c2b8;
+  }
+
+  * { box-sizing: border-box; }
+
+  @page {
+    size: letter;
+    margin: 0.5in 0.55in;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    color: var(--ink);
+    font-family: 'Lato', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 9.6pt;
+    line-height: 1.4;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page { max-width: 7.5in; margin: 0 auto; }
+
+  /* ── Header ─────────────────────────────────────── */
+  header { margin-bottom: 12px; }
+
+  h1.name {
+    font-family: 'Rokkitt', Georgia, serif;
+    font-weight: 700;
+    font-size: 27pt;
+    line-height: 1;
+    letter-spacing: 0.5px;
+    margin: 0;
+    color: var(--ink);
+  }
+
+  .title {
+    font-family: 'Rokkitt', Georgia, serif;
+    font-weight: 600;
+    font-size: 12.5pt;
+    color: var(--accent);
+    margin: 3px 0 0;
+    letter-spacing: 0.3px;
+  }
+
+  .tagline {
+    font-style: italic;
+    color: var(--faint);
+    font-size: 9.4pt;
+    margin: 4px 0 0;
+  }
+
+  .contact {
+    margin-top: 8px;
+    font-size: 8.8pt;
+    color: var(--soft);
+    letter-spacing: 0.2px;
+  }
+  .contact a { color: var(--soft); text-decoration: none; }
+  .contact .sep { color: var(--rule-d); margin: 0 6px; }
+
+  .rule-top {
+    height: 2.5px;
+    background: var(--accent);
+    border: 0;
+    margin: 10px 0 0;
+  }
+
+  /* ── Sections ───────────────────────────────────── */
+  section { margin-top: 13px; }
+
+  h2.section {
+    font-family: 'Rokkitt', Georgia, serif;
+    font-weight: 700;
+    font-size: 11pt;
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
+    color: var(--accent-d);
+    margin: 0 0 7px;
+    padding-bottom: 3px;
+    border-bottom: 1px solid var(--rule-d);
+  }
+
+  .summary { margin: 0; color: var(--soft); }
+  .summary strong { color: var(--ink); font-weight: 700; }
+
+  /* ── Experience ─────────────────────────────────── */
+  .job { margin-bottom: 9px; }
+  .job:last-child { margin-bottom: 0; }
+
+  .job-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .job-role {
+    font-family: 'Rokkitt', Georgia, serif;
+    font-weight: 700;
+    font-size: 10.6pt;
+    color: var(--ink);
+  }
+  .job-co { font-weight: 700; color: var(--accent); }
+  .job-meta {
+    font-size: 8.5pt;
+    color: var(--faint);
+    white-space: nowrap;
+    font-weight: 400;
+  }
+  .job-blurb { margin: 2px 0 3px; color: var(--soft); font-size: 9.3pt; }
+
+  ul.bullets {
+    margin: 2px 0 0;
+    padding-left: 15px;
+  }
+  ul.bullets li {
+    margin: 1.5px 0;
+    padding-left: 2px;
+    color: var(--soft);
+  }
+  ul.bullets li::marker { color: var(--accent); }
+
+  /* ── Two-column lower area ──────────────────────── */
+  .cols { display: flex; gap: 26px; break-before: page; }
+  section, .job, .entry { break-inside: avoid; }
+  .col-main { flex: 1 1 62%; min-width: 0; }
+  .col-side { flex: 1 1 38%; min-width: 0; }
+
+  /* ── Case studies / projects ────────────────────── */
+  .entry { margin-bottom: 7px; }
+  .entry:last-child { margin-bottom: 0; }
+  .entry-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+  }
+  .entry-name {
+    font-family: 'Rokkitt', Georgia, serif;
+    font-weight: 700;
+    font-size: 9.9pt;
+    color: var(--ink);
+  }
+  .entry-stack {
+    font-size: 7.6pt;
+    color: var(--faint);
+    white-space: nowrap;
+    letter-spacing: 0.2px;
+  }
+  .entry-desc { margin: 1px 0 0; color: var(--soft); font-size: 9pt; }
+  .priv {
+    display: inline-block;
+    font-size: 6.6pt;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: var(--accent-d);
+    border: 1px solid var(--rule-d);
+    border-radius: 3px;
+    padding: 0 3px;
+    vertical-align: middle;
+    margin-left: 4px;
+  }
+
+  .lane-note {
+    font-size: 8pt;
+    color: var(--faint);
+    font-style: italic;
+    margin: -3px 0 7px;
+  }
+
+  /* ── Skills ─────────────────────────────────────── */
+  .skill-group { margin-bottom: 6px; }
+  .skill-group h4 {
+    font-family: 'Rokkitt', Georgia, serif;
+    font-weight: 600;
+    font-size: 8.8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: var(--accent-d);
+    margin: 0 0 2px;
+  }
+  .skill-list { font-size: 8.7pt; color: var(--soft); }
+
+  /* ── Education / certs ──────────────────────────── */
+  .edu-school {
+    font-family: 'Rokkitt', Georgia, serif;
+    font-weight: 700;
+    font-size: 9.9pt;
+    color: var(--ink);
+  }
+  .edu-line { color: var(--soft); font-size: 8.8pt; margin-top: 1px; }
+  .certs { margin-top: 5px; color: var(--soft); font-size: 8.8pt; }
+  .certs strong { color: var(--ink); }
+
+  a { color: inherit; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <h1 class="name">Joseph Spillers</h1>
+    <p class="title">Support Automation &amp; Internal Tools Engineer</p>
+    <p class="tagline">I turn support pain into working tools.</p>
+    <p class="contact">
+      Indianapolis, IN
+      <span class="sep">•</span> (260)&nbsp;442-2113
+      <span class="sep">•</span> <a href="mailto:jdspille@gmail.com">jdspille@gmail.com</a>
+      <span class="sep">•</span> <a href="https://github.com/spilloid">github.com/spilloid</a>
+      <span class="sep">•</span> <a href="https://www.linkedin.com/in/joseph-spillers-ba6a491b5/">linkedin.com/in/joseph-spillers</a>
+    </p>
+    <hr class="rule-top">
+  </header>
+
+  <section>
+    <h2 class="section">Summary</h2>
+    <p class="summary">
+      CS-trained support specialist who works at the intersection of <strong>technical support, operations,
+      automation, and internal tooling</strong> — strongest where the problem doesn't sit cleanly inside one
+      system. I own the messy middle: the scripts, dashboards, data checks, and workflow fixes that make support
+      and production operations <strong>observable, repeatable, and automatable</strong>. Five+ years converting
+      fragile manual workflows into testable software with Python, PowerShell, and Go. B.S. Computer Science
+      (Honors, 3.8 GPA), CompTIA Network+, Azure Fundamentals (AZ-900).
+    </p>
+  </section>
+
+  <section>
+    <h2 class="section">Experience</h2>
+
+    <div class="job">
+      <div class="job-head">
+        <span class="job-role">Help Desk Support Specialist <span class="job-co">· One View, Inc.</span></span>
+        <span class="job-meta">Dec 2025 – Present · Indianapolis (Hybrid)</span>
+      </div>
+      <p class="job-blurb">Support and harden dealership document-management workflows — scan stations, WebScan,
+        Vault, PaperFlow, spooler services, data feeds, and production processing — and build the tooling that
+        makes them faster and less human-fragile.</p>
+      <ul class="bullets">
+        <li>Built internal support tooling that standardized workstation setup, scanner workflows, and endpoint decommissioning.</li>
+        <li>Stood up operational dashboards surfacing live support and production metrics so issues are caught before they escalate.</li>
+        <li>Wrote automation that eliminated repetitive manual tasks and improved consistency across endpoints.</li>
+        <li>Mined case data and saved searches to flag missing feeds, no-scan accounts, and recurring issues early.</li>
+        <li>Authored runbooks and documentation for repeatable workflows and escalation paths.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <span class="job-role">Technical Support Specialist II <span class="job-co">· Resultant</span></span>
+        <span class="job-meta">Oct 2023 – May 2025 · Remote</span>
+      </div>
+      <p class="job-blurb">Tier 2 technical support at a data &amp; technology consulting firm serving public-sector
+        and enterprise clients.</p>
+      <ul class="bullets">
+        <li>Diagnosed and resolved complex software and infrastructure issues across diverse client environments.</li>
+        <li>Managed escalation workflows and drove systemic defects to resolution with engineering.</li>
+        <li>Improved the knowledge base to cut repeat ticket volume and accelerate time to resolution.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <span class="job-role">DevOps Support Technician III <span class="job-co">· RPM Technologies</span></span>
+        <span class="job-meta">Mar 2021 – Oct 2023 · Indianapolis</span>
+      </div>
+      <p class="job-blurb">Architected DevOps automation for a managed-services IT desk supporting 2,000+ endpoints
+        across cloud, on-prem, and hybrid environments.</p>
+      <ul class="bullets">
+        <li>Converted complex manual procedures into single-push deployment scripts (PowerShell, Bash), increasing service-desk efficiency ~30%.</li>
+        <li>Built dashboarding and proactive alerting that maximized technician throughput and reduced client downtime ~25%.</li>
+        <li>Introduced pre-production error catching that reduced the volume of incidents reaching clients.</li>
+        <li>Promoted from Tier 2 to Tier 3 DevOps within 18 months; authored SOPs and training documentation.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <span class="job-role">Full Stack Software Developer <span class="job-co">· School of Science, IUPUI</span></span>
+        <span class="job-meta">Jan 2018 – Jul 2019 · Indianapolis</span>
+      </div>
+      <ul class="bullets">
+        <li>Built and maintained internal web tools used by ~100 department members, eliminating paper-based workflows.</li>
+        <li>Shipped V1 in HTML5/CSS/PHP/MySQL, then led migration to a React/Express stack for maintainability and scale.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <span class="job-role">Teacher's Assistant <span class="job-co">· IUPUI School of Science</span></span>
+        <span class="job-meta">Aug 2017 – Dec 2018 · Indianapolis</span>
+      </div>
+      <ul class="bullets">
+        <li>Lectured 120+ students and facilitated a 30-person PLTL recitation group in core CS courses.</li>
+        <li>Guided learners to root cause under time pressure — building debugging instincts, not dependency.</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="cols">
+    <div class="col-main">
+
+      <section style="margin-top:0;">
+        <h2 class="section">Selected Engineering Work</h2>
+        <p class="lane-note">Sanitized capability summaries of professional work — not source.</p>
+
+        <div class="entry">
+          <div class="entry-head">
+            <span class="entry-name">High-Throughput Document Processing Engine<span class="priv">Private</span></span>
+            <span class="entry-stack">Python · Streaming</span>
+          </div>
+          <p class="entry-desc">Single-pass streaming engine that detects and splits document boundaries, preserves
+            the source, and stages clean output for downstream ingestion. Replaced a legacy pipeline with a
+            ~60×+ throughput improvement.</p>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <span class="entry-name">Self-Hosted Observability Stack<span class="priv">Private</span></span>
+            <span class="entry-stack">Grafana · Postgres · Docker</span>
+          </div>
+          <p class="entry-desc">Application dashboarding and monitoring with LAN-vs-external access handling, driving
+            live operational dashboards for a support and production team.</p>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <span class="entry-name">Financial Reconciliation Automation<span class="priv">Private</span></span>
+            <span class="entry-stack">Python · Validation</span>
+          </div>
+          <p class="entry-desc">Rebuilt a fragile recurring reconciliation from scratch — turns messy monthly exports
+            into validated, observable PASS/FAIL results with end-to-end ownership of the process.</p>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <span class="entry-name">Internal Support Operations Platform<span class="priv">Private</span></span>
+            <span class="entry-stack">PowerShell · .NET</span>
+          </div>
+          <p class="entry-desc">Source of truth for support ops: runbooks, deployment automation, workstation
+            provisioning, and tooling that makes day-to-day support repeatable and teachable across a team.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section">Open-Source Projects</h2>
+
+        <div class="entry">
+          <div class="entry-head">
+            <span class="entry-name">NetViz</span>
+            <span class="entry-stack">Go · Wails · React</span>
+          </div>
+          <p class="entry-desc">Cross-platform LAN scanner and visualizer — live device discovery, grouped graphs,
+            monitor mode, and scan history on a fast native Go engine. No agents, no accounts, no Nmap.</p>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <span class="entry-name">ComFlow</span>
+            <span class="entry-stack">TypeScript</span>
+          </div>
+          <p class="entry-desc">Turns missed calls and voicemail into structured work items so a support team stops
+            fishing through audio scraps.</p>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <span class="entry-name">Visitor Game Engine</span>
+            <span class="entry-stack">C++</span>
+          </div>
+          <p class="entry-desc">Game engine where every behavior is a Visitor and every entity a Sprite — clean double
+            dispatch, no type switches, UML-first architecture.</p>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <span class="entry-name">pool_sim · JokeBot · Deciwatcher</span>
+            <span class="entry-stack">TS/Phaser · Python · IoT/C++</span>
+          </div>
+          <p class="entry-desc">A billiards physics prototype, a Dockerized Flask joke API, and a distributed
+            ambient-noise mapping concept. Full set at github.com/spilloid.</p>
+        </div>
+      </section>
+
+    </div>
+    <div class="col-side">
+
+      <section style="margin-top:0;">
+        <h2 class="section">Skills</h2>
+
+        <div class="skill-group">
+          <h4>Support Engineering &amp; Ops</h4>
+          <div class="skill-list">Technical support, escalation handling, workflow triage, endpoint provisioning, runbooks, documentation</div>
+        </div>
+        <div class="skill-group">
+          <h4>Automation &amp; Internal Tools</h4>
+          <div class="skill-list">Python, PowerShell, Go, C#, .NET / WinForms, Bash, browser automation, CLI &amp; desktop utilities</div>
+        </div>
+        <div class="skill-group">
+          <h4>Data &amp; Observability</h4>
+          <div class="skill-list">DuckDB, dbt, Postgres, Grafana, dashboards, reporting pipelines, KPI tracking</div>
+        </div>
+        <div class="skill-group">
+          <h4>Infrastructure &amp; Systems</h4>
+          <div class="skill-list">Windows, Linux, Docker, Proxmox, GitHub Actions, RMM, monitoring, networking</div>
+        </div>
+        <div class="skill-group">
+          <h4>AI-Assisted Engineering</h4>
+          <div class="skill-list">Claude Code, AI prototyping, doc generation, test planning, code review</div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section">Education</h2>
+        <div class="edu-school">B.S. Computer Science</div>
+        <div class="edu-line">Purdue School of Science, IUPUI — Indianapolis, IN</div>
+        <div class="edu-line">Minor in Mathematics · Honors · GPA 3.8</div>
+        <div class="certs"><strong>Certifications:</strong> CompTIA Network+ · Microsoft Azure Fundamentals (AZ-900) · CKA (in progress)</div>
+      </section>
+
+      <section>
+        <h2 class="section">Homelab</h2>
+        <div class="skill-list">Proxmox VE hypervisor running OPNsense, TrueNAS, UniFi Gateway, and K8s-orchestrated
+          services — hands-on infrastructure experimentation and deployment-workflow validation.</div>
+      </section>
+
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
