@@ -395,9 +395,46 @@
 	const fg = document.getElementById('ember-fg');
 	const fctx = fg.getContext('2d');
 
+	// Pre-rendered glow sprites — built once, then drawImage'd.
+	// createRadialGradient per-particle per-frame was the CPU sink; this kills it.
+	function makeSprite(size, stops) {
+		const c = document.createElement('canvas');
+		c.width = c.height = size;
+		const g = c.getContext('2d');
+		const grd = g.createRadialGradient(size / 2, size / 2, 0, size / 2, size / 2, size / 2);
+		stops.forEach(([o, col]) => grd.addColorStop(o, col));
+		g.fillStyle = grd;
+		g.fillRect(0, 0, size, size);
+		return c;
+	}
+	const emberSprite = makeSprite(64, [
+		[0,    'rgba(255,240,180,1)'],
+		[0.15, 'rgba(255,170,20,0.95)'],
+		[0.45, 'rgba(255,90,0,0.35)'],
+		[1,    'rgba(255,30,0,0)']
+	]);
+	const smokeSprite = makeSprite(256, [
+		[0,   'rgba(60,45,32,1)'],
+		[0.5, 'rgba(50,38,28,0.5)'],
+		[1,   'rgba(40,30,24,0)']
+	]);
+	const hotspotSprite = makeSprite(256, [
+		[0,   'rgba(255,120,15,1)'],
+		[0.5, 'rgba(220,60,0,0.45)'],
+		[1,   'rgba(160,20,0,0)']
+	]);
+
+	let skyGrad;
 	function resize() {
 		canvas.width = fg.width = window.innerWidth;
 		canvas.height = fg.height = window.innerHeight;
+		skyGrad = ctx.createLinearGradient(0, 0, 0, canvas.height);
+		skyGrad.addColorStop(0,    '#0d0804');
+		skyGrad.addColorStop(0.28, '#180d05');
+		skyGrad.addColorStop(0.52, '#2a1206');
+		skyGrad.addColorStop(0.72, '#4e1c00');
+		skyGrad.addColorStop(0.88, '#7c2800');
+		skyGrad.addColorStop(1,    '#a83200');
 	}
 	resize();
 	window.addEventListener('resize', resize);
@@ -435,18 +472,8 @@
 		}
 		draw() {
 			if (this.alpha <= 0) return;
-			const hr = Math.max(0, Math.min(1, this.y / canvas.height));
-			const rv = Math.round(38 + 52 * hr);
-			const gv = Math.round(30 + 28 * hr);
-			const bv = Math.round(24 + 8 * hr);
-			const grd = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.r);
-			grd.addColorStop(0,    `rgba(${rv},${gv},${bv},${this.alpha})`);
-			grd.addColorStop(0.5,  `rgba(${rv},${gv},${bv},${this.alpha * 0.4})`);
-			grd.addColorStop(1,    `rgba(${rv},${gv},${bv},0)`);
-			ctx.beginPath();
-			ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
-			ctx.fillStyle = grd;
-			ctx.fill();
+			ctx.globalAlpha = this.alpha;
+			ctx.drawImage(smokeSprite, this.x - this.r, this.y - this.r, this.r * 2, this.r * 2);
 		}
 	}
 
@@ -477,21 +504,9 @@
 			if (this.life <= 0) return;
 			const flick = 0.55 + 0.45 * Math.abs(Math.sin(this.flicker));
 			const a = this.life * flick;
-			const g = Math.round(60 + 195 * this.life);
-			ctx.beginPath();
-			ctx.arc(this.x, this.y, this.sz * (0.5 + 0.5 * flick), 0, Math.PI * 2);
-			ctx.fillStyle = `rgba(255,${g},8,${a})`;
-			ctx.fill();
-			if (a > 0.15) {
-				const hr = this.sz * 7;
-				const halo = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, hr);
-				halo.addColorStop(0, `rgba(255,${g},0,${a * 0.38})`);
-				halo.addColorStop(1, 'rgba(255,30,0,0)');
-				ctx.beginPath();
-				ctx.arc(this.x, this.y, hr, 0, Math.PI * 2);
-				ctx.fillStyle = halo;
-				ctx.fill();
-			}
+			const d = this.sz * 14 * (0.6 + 0.4 * flick);
+			ctx.globalAlpha = a;
+			ctx.drawImage(emberSprite, this.x - d / 2, this.y - d / 2, d, d);
 		}
 	}
 
@@ -523,31 +538,16 @@
 			if (this.life <= 0) return;
 			const flick = 0.55 + 0.45 * Math.abs(Math.sin(this.flicker));
 			const a = this.life * flick * 0.55;
-			const g = Math.round(70 + 185 * this.life);
-			const r = this.sz * (0.5 + 0.5 * flick);
-			const halo = fctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, r * 6);
-			halo.addColorStop(0,   `rgba(255,${g},10,${a})`);
-			halo.addColorStop(0.2, `rgba(255,${Math.round(g * 0.7)},0,${a * 0.35})`);
-			halo.addColorStop(1,   'rgba(255,30,0,0)');
-			fctx.beginPath();
-			fctx.arc(this.x, this.y, r * 6, 0, Math.PI * 2);
-			fctx.fillStyle = halo;
-			fctx.fill();
+			const d = this.sz * (0.5 + 0.5 * flick) * 12;
+			fctx.globalAlpha = a;
+			fctx.drawImage(emberSprite, this.x - d / 2, this.y - d / 2, d, d);
 		}
 	}
 
 	// ── Sky: warm dark haze throughout, fire glow from below ─
 	function drawSky() {
-		const w = canvas.width, h = canvas.height;
-		const grd = ctx.createLinearGradient(0, 0, 0, h);
-		grd.addColorStop(0,    '#0d0804');
-		grd.addColorStop(0.28, '#180d05');
-		grd.addColorStop(0.52, '#2a1206');
-		grd.addColorStop(0.72, '#4e1c00');
-		grd.addColorStop(0.88, '#7c2800');
-		grd.addColorStop(1,    '#a83200');
-		ctx.fillStyle = grd;
-		ctx.fillRect(0, 0, w, h);
+		ctx.fillStyle = skyGrad;
+		ctx.fillRect(0, 0, canvas.width, canvas.height);
 	}
 
 	// ── Soft fire glow — no spiky columns ────────────────
@@ -570,34 +570,55 @@
 		for (let i = 0; i < 4; i++) {
 			const sx = (i + 0.5) * (w / 4) + Math.sin(time * 1.1 + i * 1.85) * (w / 4) * 0.25;
 			const sr = w * 0.22 + Math.sin(time * 0.85 + i * 2.4) * w * 0.04;
-			const sg = ctx.createRadialGradient(sx, h, 0, sx, h * 0.68, sr);
-			sg.addColorStop(0,   `rgba(255,120,15,${0.12 + 0.04 * Math.sin(time + i)})`);
-			sg.addColorStop(0.5, `rgba(220,60,0,${0.06 + 0.02 * Math.sin(time * 1.2 + i)})`);
-			sg.addColorStop(1,   'rgba(160,20,0,0)');
-			ctx.beginPath();
-			ctx.ellipse(sx, h, sr, sr * 0.55, 0, 0, Math.PI * 2);
-			ctx.fillStyle = sg;
-			ctx.fill();
+			ctx.globalAlpha = 0.14 + 0.04 * Math.sin(time + i);
+			ctx.drawImage(hotspotSprite, sx - sr, h - sr * 0.55, sr * 2, sr * 1.1);
 		}
+		ctx.globalAlpha = 1;
 		ctx.globalCompositeOperation = 'source-over';
 	}
 
-	const smokes = Array.from({length: 60}, () => new Smoke(true));
-	const embers = Array.from({length: 140}, () => new Ember(true));
-	const fgEmbers = Array.from({length: 14}, () => new FgEmber(true));
+	const smokes = Array.from({length: 24}, () => new Smoke(true));
+	const embers = Array.from({length: 48}, () => new Ember(true));
+	const fgEmbers = Array.from({length: 10}, () => new FgEmber(true));
 
-	function animate() {
+	function frame() {
 		drawSky();
-		smokes.forEach(s => { s.update(); s.draw(); });
+		for (const s of smokes) { s.update(); s.draw(); }
+		ctx.globalAlpha = 1;
 		drawFireGlow();
-		embers.forEach(e => { e.update(); e.draw(); });
+		for (const e of embers) { e.update(); e.draw(); }
+		ctx.globalAlpha = 1;
 		fctx.clearRect(0, 0, fg.width, fg.height);
-		fgEmbers.forEach(e => { e.update(); e.draw(); });
+		for (const e of fgEmbers) { e.update(); e.draw(); }
+		fctx.globalAlpha = 1;
 		t++;
-		requestAnimationFrame(animate);
 	}
 
-	animate();
+	let rafId = null;
+	function loop() {
+		frame();
+		rafId = requestAnimationFrame(loop);
+	}
+	function start() { if (rafId === null) loop(); }
+	function stop() {
+		if (rafId !== null) { cancelAnimationFrame(rafId); rafId = null; }
+	}
+
+	// Don't burn CPU when the tab isn't visible.
+	document.addEventListener('visibilitychange', () => {
+		document.hidden ? stop() : start();
+	});
+
+	// Respect users who'd rather not have motion (also saves their battery).
+	const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+	if (reduceMotion.matches) {
+		frame(); // one static painted frame, then idle
+	} else {
+		start();
+	}
+	reduceMotion.addEventListener('change', e => {
+		if (e.matches) { stop(); frame(); } else { start(); }
+	});
 })();
 </script>
 </body>
