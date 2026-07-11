@@ -30,8 +30,9 @@ work and public repos never share a grid.
 ## Files
 
 - `src/` — main site files used by the Docker/Nginx setup.
-- `docs/` — static files served by GitHub Pages (the deployed copy).
-- `docs/CNAME` — custom domain (`spillerstech.us`).
+- `docs/` — static files served by GitHub Pages (the deployed copy) at
+  `https://spilloid.github.io/`. (`spillerstech.us` now belongs to the
+  [Spillers-Technology](https://github.com/Spillers-Technology) org, not this site.)
 - `index.html` at the repo root — tiny redirect entry point.
 - `Dockerfile` / `docker-compose.yml` — Nginx container for local serving.
 
