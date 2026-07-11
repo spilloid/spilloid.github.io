@@ -151,6 +151,38 @@ p {
 	margin: 6px 0 0;
 }
 
+.studioBadge {
+	display: inline-flex;
+	align-items: center;
+	gap: 7px;
+	margin-top: 12px;
+	padding: 6px 10px;
+	border: 1px solid var(--accent-line);
+	border-radius: 999px;
+	background: var(--accent-soft);
+	color: var(--accent-2);
+	font-size: 0.78em;
+	font-weight: 700;
+	letter-spacing: 0.02em;
+}
+.studioBadge span { width: 6px; height: 6px; border-radius: 50%; background: #71d99a; box-shadow: 0 0 0 3px rgba(113, 217, 154, 0.1); }
+.studioBadge svg { width: 13px; height: 13px; }
+.studioBadge:hover { color: var(--ink); border-color: var(--accent); transform: translateY(-1px); }
+
+.portfolioDoor {
+	display: block;
+	margin: 12px 0 18px;
+	padding: 12px 14px;
+	border: 1px solid var(--accent-line);
+	border-radius: var(--radius-sm);
+	background: linear-gradient(90deg, var(--accent-soft), rgba(255,255,255,0.02));
+	color: var(--ink-3);
+	font-size: 0.9em;
+}
+.portfolioDoor strong { color: var(--accent-2); }
+.portfolioDoor svg { width: 14px; height: 14px; }
+.portfolioDoor:hover { color: var(--ink); border-color: var(--accent); }
+
 /* ── Contact chips ─────────────────────────────────────── */
 .iconRow {
 	display: flex;
