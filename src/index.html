@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Joseph Spillers — Support Automation Engineer</title>
-
-<meta name="viewport" content="width=device-width">
-<meta name="description" content="Joseph Spillers — Support Automation & Internal Tools Engineer. A computer-science-trained support specialist who builds dashboards, automation, data pipelines, and workflow tooling that make support and production operations faster, more measurable, and less human-fragile.">
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0a0805">
+<title>Joseph Spillers — Support Automation &amp; Internal Tools Engineer</title>
+<meta name="description" content="Joseph Spillers: Support Automation & Internal Tools Engineer and founder of Spillers Technology. Builds the dashboards, automation, and workflow tooling that make support operations measurable, plus shipped, MIT-licensed software including AnchorDesk, Partner Center Bridge, ComFlow, NetViz, and SpoolSmith.">
 
 <meta property="og:title" content="Joseph Spillers — Support Automation & Internal Tools Engineer">
-<meta property="og:description" content="CS-trained support specialist who builds internal tools, observability, automation, and data pipelines for support and production operations.">
+<meta property="og:description" content="Support engineer who ships: internal tools and observability at work, plus a portfolio of documented, release-tagged software with public source.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://spilloid.github.io/">
+<meta name="twitter:card" content="summary">
 <link rel="canonical" href="https://spilloid.github.io/">
 
 <link type="text/css" rel="stylesheet" href="style.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css?family=Rokkitt:400,500,700|Lato:300,400,700" rel="stylesheet">
-<script src="https://unpkg.com/feather-icons"></script>
+<link href="https://fonts.googleapis.com/css?family=Rokkitt:400,500,700|Lato:300,400,700&amp;display=swap" rel="stylesheet">
+<script defer src="https://unpkg.com/feather-icons@4.29.2/dist/feather.min.js"></script>
 <link rel="icon" href="./favicon.ico">
-<!-- OpenReplay Tracking Code (replay.spillerstech.us) -->
+<!-- OpenReplay session replay (replay.spillerstech.us): inputs, emails, and numbers are obscured.
+     Disclosed at spillerstech.us/privacy.html and in the page footer. -->
 <script>
+  if (window.location.protocol === "https:") {
   var initOpts = {
     projectKey: "vQsdaVKqB3x2jUBKW4xd",
     ingestPoint: "https://replay.spillerstech.us/ingest",
@@ -45,83 +48,319 @@
   })("//static.openreplay.com/18.0.17/openreplay-assist.js",1,0,initOpts,startOpts);
   OpenReplay.start();
   OpenReplay.setMetadata("project", "resume");
+  }
 </script>
 </head>
 <body id="top">
-<canvas id="campfire-bg"></canvas>
-<canvas id="ember-fg"></canvas>
+<a class="skipLink" href="#mainArea">Skip to main content</a>
+<canvas id="campfire-bg" aria-hidden="true"></canvas>
+<canvas id="ember-fg" aria-hidden="true"></canvas>
 <div id="cv" class="instaFade">
-	<div class="mainDetails">
+	<header class="mainDetails">
 		<div id="name">
-			<h1 class="quickFade delayTwo">Joseph Spillers</h1>
-			<h2 class="quickFade delayThree">Support Automation &amp; Internal Tools Engineer</h2>
-			<p class="heroTag quickFade delayFour">I turn support pain into working tools.</p>
-			<a class="studioBadge quickFade delayFour" href="https://spillerstech.us" target="_blank" rel="noopener"><span></span> Founder &amp; builder, Spillers Technology <i data-feather="arrow-up-right"></i></a>
+			<h1 class="quickFade delayOne">Joseph Spillers</h1>
+			<p class="roleLine quickFade delayOne">Support Automation &amp; Internal Tools Engineer</p>
+			<p class="heroTag quickFade delayTwo">I turn support pain into shipped software.</p>
+			<a class="studioBadge quickFade delayTwo" href="https://spillerstech.us" target="_blank" rel="noopener"><span></span> Founder &amp; builder, Spillers Technology <i data-feather="arrow-up-right"></i></a>
 		</div>
 
-		<div id="contactDetails" class="quickFade delayFour">
+		<div id="contactDetails" class="quickFade delayTwo">
 			<div class="iconRow">
-				<a href="https://spilloid.github.io/Joseph_Spillers_Resume.pdf" class="iconChip" title="Download Resume" aria-label="Download resume" target="_blank" rel="noopener"><i data-feather="download"></i></a>
+				<a href="https://spilloid.github.io/Joseph_Spillers_Resume.pdf" class="iconChip" title="Download resume (PDF)" aria-label="Download resume (PDF)" target="_blank" rel="noopener"><i data-feather="download"></i></a>
 				<span class="iconDivider"></span>
 				<a href="https://github.com/spilloid" class="iconChip" title="GitHub" aria-label="GitHub profile" target="_blank" rel="noopener"><i data-feather="github"></i></a>
 				<a href="https://www.linkedin.com/in/joseph-spillers-ba6a491b5/" class="iconChip" title="LinkedIn" aria-label="LinkedIn profile" target="_blank" rel="noopener"><i data-feather="linkedin"></i></a>
 				<span class="iconDivider"></span>
 				<a href="mailto:jdspille@gmail.com" class="iconChip" title="Email" aria-label="Email Joseph Spillers"><i data-feather="mail"></i></a>
-				<span class="iconChip" title="+1(260)442-2113"><i data-feather="smartphone"></i></span>
+				<a href="tel:+12604422113" class="iconChip" title="+1 (260) 442-2113" aria-label="Call Joseph Spillers"><i data-feather="smartphone"></i></a>
 			</div>
 		</div>
-		<div class="clear"></div>
-	</div>
+	</header>
 
-	<div id="mainArea" class="quickFade delayFive">
+	<nav class="pageNav quickFade delayThree" aria-label="Page sections">
+		<a href="#build">What I build</a>
+		<a href="#work">Shipped software</a>
+		<a href="#experience">Experience</a>
+		<a href="#systems">Professional systems</a>
+		<a href="#skills">Skills</a>
+	</nav>
+
+	<main id="mainArea" class="quickFade delayThree">
 
 		<!-- ── What I Build ─────────────────────────────────── -->
-		<section>
-			<div class="sectionTitle">
-				<h1>What I Build</h1>
-			</div>
-
+		<section id="build" aria-labelledby="build-title">
+			<div class="sectionTitle"><h2 id="build-title">What I Build</h2></div>
 			<div class="sectionContent">
-				<p class="lead">I work at the intersection of technical support, operations, automation, and internal tooling &mdash; and I'm strongest where the problem isn't cleanly contained inside one system. I like owning the messy middle: the scripts, dashboards, data checks, and workflow fixes that help a team actually operate.</p>
+				<p class="lead">I work at the intersection of technical support, operations, automation, and internal tooling &mdash; strongest where the problem isn't cleanly contained inside one system. Day to day that's the tools, dashboards, and data checks that keep a support and production team running. After hours it's a growing catalog of shipped, documented, open-source software under <a href="https://spillerstech.us" target="_blank" rel="noopener">Spillers Technology</a>.</p>
 
 				<div class="buildGrid">
 					<div class="buildCard">
 						<i data-feather="tool"></i>
-						<h4>Internal Tools</h4>
+						<h3>Internal Tools</h3>
 						<p>Desktop and CLI utilities that fold messy, manual workflows into one reliable click.</p>
 					</div>
 					<div class="buildCard">
 						<i data-feather="bar-chart-2"></i>
-						<h4>Operational Dashboards</h4>
+						<h3>Operational Dashboards</h3>
 						<p>Live visibility into support and production metrics, so problems are seen before they escalate.</p>
 					</div>
 					<div class="buildCard">
 						<i data-feather="git-merge"></i>
-						<h4>Automation Pipelines</h4>
+						<h3>Automation Pipelines</h3>
 						<p>Ingestion, validation, and reconciliation that turn fragile manual steps into testable software.</p>
 					</div>
 					<div class="buildCard">
 						<i data-feather="book-open"></i>
-						<h4>Runbooks &amp; Provisioning</h4>
+						<h3>Runbooks &amp; Provisioning</h3>
 						<p>Repeatable, teachable systems: onboarding, escalation paths, and endpoint setup.</p>
+					</div>
+					<div class="buildCard">
+						<i data-feather="cpu"></i>
+						<h3>Agent-Ready Software</h3>
+						<p>Products that expose MCP servers so AI agents can work real tickets, voicemail, and tenants &mdash; with scoped credentials and human approval where it matters.</p>
+					</div>
+					<div class="buildCard">
+						<i data-feather="package"></i>
+						<h3>Releases You Can Trust</h3>
+						<p>Tagged versions with checksums, Authenticode-signed Windows builds, MIT-licensed products, and maturity labels that say what isn't finished.</p>
 					</div>
 				</div>
 
 				<p class="noteCallout">My title is Help Desk Support Specialist, but much of the work sits closer to support engineering and internal platform operations &mdash; building the tools, dashboards, scripts, and workflows that make support and production work observable, repeatable, and automatable.</p>
 			</div>
-			<div class="clear"></div>
 		</section>
 
+		<!-- ── Shipped software (public portfolio) ──────────── -->
+		<section id="work" aria-labelledby="work-title">
+			<div class="sectionTitle"><h2 id="work-title">Shipped Software</h2></div>
+			<div class="sectionContent">
+				<p class="laneNote">Built on my own time, with the source public. Every card names its repo and says how finished it is. Private employer work is kept separate, further down.</p>
+				<a class="portfolioDoor" href="https://spillerstech.us" target="_blank" rel="noopener"><strong>Want the productized version?</strong> Visit the Spillers Technology studio &mdash; downloads, release history, support, and custom work. <i data-feather="arrow-up-right"></i></a>
+				<p class="legend"><span class="statusPill s-ok">Released</span> tagged 1.0 or later <span class="statusPill s-pre">Pre-1.0</span> works, still changing <span class="statusPill s-proto">Prototype</span> proving an idea</p>
+
+				<div class="portfolioGroup">
+					<h3 class="groupHeading">Ops &amp; support software <span>&middot; the Spillers Technology suite</span></h3>
+					<div class="projectGrid">
+
+						<article class="projectCard product">
+							<div class="projectTop">
+								<div class="projectLang">React · Fastify · Prisma · PostgreSQL · MIT</div>
+								<span class="statusPill s-ok">Released</span>
+							</div>
+							<h4 class="projectName"><a href="https://spillerstech.us/AnchorDesk/" target="_blank" rel="noopener">AnchorDesk</a></h4>
+							<p>A local-first, self-hosted service desk for MSPs and IT teams that also sees and acts on the machines behind the tickets: email-to-ticket, SLA tracking, device inventory, RMM actions, a customer portal, append-only audit history, a mobile-first UI, and a built-in MCP server.</p>
+							<div class="projectLinks">
+								<a href="https://spillerstech.us/AnchorDesk/" target="_blank" rel="noopener"><i data-feather="external-link"></i> Project page</a>
+								<a href="https://github.com/Spillers-Technology/AnchorDesk" target="_blank" rel="noopener"><i data-feather="github"></i> Spillers-Technology/AnchorDesk</a>
+							</div>
+						</article>
+
+						<article class="projectCard product">
+							<div class="projectTop">
+								<div class="projectLang">ASP.NET Core · React · Microsoft Graph · Partner Center · MIT</div>
+								<span class="statusPill s-pre">Pre-1.0</span>
+							</div>
+							<h4 class="projectName"><a href="https://spillerstech.us/PartnerCenterBridge/" target="_blank" rel="noopener">Partner Center Bridge</a></h4>
+							<p>Cross-tenant MSP command center. Contracts declare a desired state and every customer tenant is reconciled to it: Intune app deploys, new-hire and offboarding provisioning, cross-tenant user search, and Diagnose → Fix → Verify workflows. The MCP server sits behind a human approval queue.</p>
+							<div class="projectLinks">
+								<a href="https://spillerstech.us/PartnerCenterBridge/" target="_blank" rel="noopener"><i data-feather="external-link"></i> Project page</a>
+								<a href="https://github.com/Spillers-Technology/PartnerCenterBridge" target="_blank" rel="noopener"><i data-feather="github"></i> Spillers-Technology/PartnerCenterBridge</a>
+							</div>
+						</article>
+
+						<article class="projectCard product">
+							<div class="projectTop">
+								<div class="projectLang">TypeScript · SIP · STT · LLM · MIT</div>
+								<span class="statusPill s-ok">Released</span>
+							</div>
+							<h4 class="projectName"><a href="https://spillerstech.us/ComFlow/" target="_blank" rel="noopener">ComFlow</a></h4>
+							<p>A voicemail regulator, deliberately not an AI receptionist. It answers over SIP, transcribes and structures each message, gives the team one triage inbox, and syncs reviewed calls into AnchorDesk as tickets. Self-hosted or multi-tenant, with an MCP endpoint.</p>
+							<div class="projectLinks">
+								<a href="https://spillerstech.us/ComFlow/" target="_blank" rel="noopener"><i data-feather="external-link"></i> Project page</a>
+								<a href="https://github.com/Spillers-Technology/ComFlow" target="_blank" rel="noopener"><i data-feather="github"></i> Spillers-Technology/ComFlow</a>
+							</div>
+						</article>
+
+						<article class="projectCard product">
+							<div class="projectTop">
+								<div class="projectLang">Go · Wails · React · MIT</div>
+								<span class="statusPill s-ok">Released</span>
+							</div>
+							<h4 class="projectName"><a href="https://spillerstech.us/netviz/" target="_blank" rel="noopener">NetViz</a></h4>
+							<p>See everything on your LAN in seconds. A scanner and visualizer for Windows and Linux on a native Go engine: live discovery into table, graph, and hierarchy views, monitor mode, and scan history. Signed Windows builds; no agents, accounts, or Nmap.</p>
+							<div class="projectLinks">
+								<a href="https://spillerstech.us/netviz/" target="_blank" rel="noopener"><i data-feather="external-link"></i> Project page</a>
+								<a href="https://github.com/Spillers-Technology/netviz" target="_blank" rel="noopener"><i data-feather="github"></i> Spillers-Technology/netviz</a>
+							</div>
+						</article>
+
+						<article class="projectCard product">
+							<div class="projectTop">
+								<div class="projectLang">Go · Windows · Intune · MIT</div>
+								<span class="statusPill s-ok">Released</span>
+							</div>
+							<h4 class="projectName"><a href="https://spilloid.github.io/spoolsmith/" target="_blank" rel="noopener">SpoolSmith</a></h4>
+							<p>Copy a working network-printer setup from one PC to another. Reviewable dry-run plans with a fingerprint, fail-closed identity checks, driver-store export, offline apply, and local Intune Win32 packaging, as a native Windows app and CLI with Authenticode-signed builds.</p>
+							<div class="projectLinks">
+								<a href="https://spilloid.github.io/spoolsmith/" target="_blank" rel="noopener"><i data-feather="external-link"></i> Project page</a>
+								<a href="https://github.com/spilloid/spoolsmith" target="_blank" rel="noopener"><i data-feather="github"></i> spilloid/spoolsmith</a>
+							</div>
+						</article>
+
+						<article class="projectCard product">
+							<div class="projectTop">
+								<div class="projectLang">Java 21 · Spring Boot 3 · JTOpen · PostgreSQL · MIT</div>
+								<span class="statusPill s-pre">Pre-1.0</span>
+							</div>
+							<h4 class="projectName"><a href="https://spillerstech.us/RetroSpool/" target="_blank" rel="noopener">RetroSpool</a></h4>
+							<p>Spool files off the AS/400, as PDFs. It splits concatenated PCL and renders clean PDFs through a GhostPDL sidecar, with a multi-tenant operator console and self-serve connection intake. The queue poller and export fan-out are planned, not built.</p>
+							<div class="projectLinks">
+								<a href="https://spillerstech.us/RetroSpool/" target="_blank" rel="noopener"><i data-feather="external-link"></i> Project page</a>
+								<a href="https://github.com/Spillers-Technology/RetroSpool" target="_blank" rel="noopener"><i data-feather="github"></i> Spillers-Technology/RetroSpool</a>
+							</div>
+						</article>
+					</div>
+					<p class="alsoLine">Also from the studio: <a href="https://spillerstech.us/OpsQuest/" target="_blank" rel="noopener">OpsQuest</a>, a help-desk training game with an Android release.</p>
+				</div>
+
+				<div class="portfolioGroup">
+					<h3 class="groupHeading">AI &amp; agent engineering <span>&middot; building with, and for, agents</span></h3>
+					<div class="projectGrid">
+
+						<article class="projectCard product">
+							<div class="projectTop">
+								<div class="projectLang">Python · ViGEm · Anthropic / OpenAI / Ollama · MIT</div>
+								<span class="statusPill s-proto">Prototype</span>
+							</div>
+							<h4 class="projectName"><a href="https://spilloid.github.io/player-2/" target="_blank" rel="noopener">player-2</a></h4>
+							<p>A game-independent embodied AI teammate: it sees the screen and plays through an ordinary virtual controller, with no game APIs, memory reading, or injection. Milestone 1 drove a real commercial game. The repo also publishes its own adversarial-review process, measured round by round.</p>
+							<div class="projectLinks">
+								<a href="https://spilloid.github.io/player-2/" target="_blank" rel="noopener"><i data-feather="external-link"></i> Project page</a>
+								<a href="https://github.com/spilloid/player-2" target="_blank" rel="noopener"><i data-feather="github"></i> spilloid/player-2</a>
+							</div>
+						</article>
+
+						<article class="projectCard product">
+							<div class="projectTop">
+								<div class="projectLang">JavaScript · Canvas 2D · SSE · MIT</div>
+								<span class="statusPill s-pre">Pre-1.0</span>
+							</div>
+							<h4 class="projectName"><a href="https://spillerstech.us/Corporate-Simulator/" target="_blank" rel="noopener">Corporate-Simulator</a></h4>
+							<p>A tiny animated office that replays board-style adversarial review: a motion, six isolated positions, debate, a vote, clerk&rsquo;s minutes, and the founder&rsquo;s decision. Replay and the human-authored phases work; live model seats are planned.</p>
+							<div class="projectLinks">
+								<a href="https://spillerstech.us/Corporate-Simulator/" target="_blank" rel="noopener"><i data-feather="external-link"></i> Project page</a>
+								<a href="https://github.com/Spillers-Technology/Corporate-Simulator" target="_blank" rel="noopener"><i data-feather="github"></i> Spillers-Technology/Corporate-Simulator</a>
+							</div>
+						</article>
+					</div>
+					<p class="noteCallout slim">AnchorDesk, ComFlow, and Partner Center Bridge each ship an MCP server with scoped credentials; Partner Center Bridge's puts a human approval queue in front of any change.</p>
+				</div>
+
+				<div class="portfolioGroup lab">
+					<h3 class="groupHeading">Engineering lab <span>&middot; games, prototypes, and curiosities</span></h3>
+					<p class="hoverHint">Hover a card for the punchline.</p>
+					<div class="projectGrid labGrid">
+
+						<div class="projectCardWrapper">
+							<a href="https://spilloid.github.io/Twove/" class="projectCard compact" target="_blank" rel="noopener">
+								<div class="projectCardFront">
+									<div class="projectLang">C++17 · SDL2 · WebAssembly</div>
+									<h4 class="projectName">Twove</h4>
+									<p>The CS degree flex: a C++17 engine where every entity is a Sprite and every behavior a Visitor. Two virtual calls per sprite per frame, zero dynamic_cast, playable in the browser.</p>
+									<span class="projectLink"><i data-feather="external-link"></i> spilloid.github.io/Twove</span>
+								</div>
+								<div class="projectCardBack" aria-hidden="true">
+									<p class="jokeSetup">Why did the game engine refuse therapy?</p>
+									<p class="jokePunchline">It already had double dispatch figured out.</p>
+								</div>
+							</a>
+						</div>
+
+						<div class="projectCardWrapper">
+							<a href="https://spilloid.github.io/pool_sim/" class="projectCard compact" target="_blank" rel="noopener">
+								<div class="projectCardFront">
+									<div class="projectLang">TypeScript · Node.js · Phaser</div>
+									<h4 class="projectName">pool_sim</h4>
+									<p>Coefficient-driven billiards physics: drag-to-shoot, cushions, pockets, solids-and-stripes turns, and a simple AI opponent.</p>
+									<span class="projectLink"><i data-feather="external-link"></i> spilloid.github.io/pool_sim</span>
+								</div>
+								<div class="projectCardBack" aria-hidden="true">
+									<p class="jokeSetup">What did the cue ball say before the big shot?</p>
+									<p class="jokePunchline">I&rsquo;m on a roll.</p>
+								</div>
+							</a>
+						</div>
+
+						<div class="projectCardWrapper">
+							<a href="https://spillerstech.us/SpillerMug/" class="projectCard compact" target="_blank" rel="noopener">
+								<div class="projectCardFront">
+									<div class="projectLang">JavaScript · Three.js · BSD-2</div>
+									<h4 class="projectName">SpillerMug</h4>
+									<p>A coffee-powered momentum runner: a procedural 3D punk mug in charm-covered clogs. Tricks, rails, and no build step.</p>
+									<span class="projectLink"><i data-feather="external-link"></i> spillerstech.us/SpillerMug</span>
+								</div>
+								<div class="projectCardBack" aria-hidden="true">
+									<p class="jokeSetup">Why is the mug so good at rails?</p>
+									<p class="jokePunchline">It&rsquo;s a natural grinder.</p>
+								</div>
+							</a>
+						</div>
+
+						<div class="projectCardWrapper">
+							<a href="https://spilloid.github.io/Deciwatcher/" class="projectCard compact" target="_blank" rel="noopener">
+								<div class="projectCardFront">
+									<div class="projectLang">ESP8266 · Node · React · MySQL · MIT</div>
+									<h4 class="projectName">Deciwatcher</h4>
+									<p>Ambient-noise mapping for shared spaces from a 2019 IUPUI senior capstone, with the frontend modernized in 2026. A LAN-only prototype.</p>
+									<span class="projectLink"><i data-feather="external-link"></i> spilloid.github.io/Deciwatcher</span>
+								</div>
+								<div class="projectCardBack" aria-hidden="true">
+									<p class="jokeSetup">What do you call a noise surveillance system?</p>
+									<p class="jokePunchline">A sound investment.</p>
+								</div>
+							</a>
+						</div>
+
+						<div class="projectCardWrapper">
+							<a href="https://spilloid.github.io/JokeBot/" class="projectCard compact" target="_blank" rel="noopener">
+								<div class="projectCardFront">
+									<div class="projectLang">Python · Flask · Docker · MIT</div>
+									<h4 class="projectName">JokeBot</h4>
+									<p>Because someone had to containerize dad jokes: a tiny, RESTful Flask API, Dockerized.</p>
+									<span class="projectLink"><i data-feather="external-link"></i> spilloid.github.io/JokeBot</span>
+								</div>
+								<div class="projectCardBack" aria-hidden="true">
+									<p class="jokeSetup">Why was the joke API never lonely?</p>
+									<p class="jokePunchline">It always had great delivery.</p>
+								</div>
+							</a>
+						</div>
+
+						<div class="projectCardWrapper">
+							<a href="https://github.com/spilloid/spilloid.github.io" class="projectCard compact" target="_blank" rel="noopener">
+								<div class="projectCardFront">
+									<div class="projectLang">HTML · CSS · Canvas</div>
+									<h4 class="projectName">spilloid.github.io</h4>
+									<p>This page: hand-built static HTML and CSS with a canvas campfire and zero frameworks, because the portfolio should itself be a portfolio piece.</p>
+									<span class="projectLink"><i data-feather="github"></i> spilloid/spilloid.github.io</span>
+								</div>
+								<div class="projectCardBack" aria-hidden="true">
+									<p class="jokeSetup">Why did the resume site refuse a template?</p>
+									<p class="jokePunchline">It had too much character.</p>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 
 		<!-- ── Professional Experience ──────────────────────── -->
-		<section>
-			<div class="sectionTitle">
-				<h1>Experience</h1>
-			</div>
-
+		<section id="experience" aria-labelledby="experience-title">
+			<div class="sectionTitle"><h2 id="experience-title">Experience</h2></div>
 			<div class="sectionContent">
 				<article>
-					<h2>Help Desk Support Specialist <span class="atCompany">One View, Inc.</span></h2>
+					<h3>Help Desk Support Specialist <span class="atCompany">One View, Inc.</span></h3>
 					<p class="subDetails">Dec 2025 &ndash; Present &middot; Indianapolis, Hybrid</p>
 					<p>Support and improve dealership document-management workflows &mdash; scan stations, WebScan, Vault, PaperFlow, spooler services, data feeds, and production processing &mdash; and build the tooling that makes them faster and less human-fragile.</p>
 					<ul class="roleBullets">
@@ -133,7 +372,7 @@
 					</ul>
 				</article>
 				<article>
-					<h2>Technical Support Specialist II <span class="atCompany">Resultant</span></h2>
+					<h3>Technical Support Specialist II <span class="atCompany">Resultant</span></h3>
 					<p class="subDetails">Oct 2023 &ndash; May 2025 &middot; Remote</p>
 					<p>Tier 2 technical support at a data &amp; technology consulting firm serving public-sector and enterprise clients.</p>
 					<ul class="roleBullets">
@@ -143,7 +382,7 @@
 					</ul>
 				</article>
 				<article>
-					<h2>DevOps Support Technician III <span class="atCompany">RPM Technologies</span></h2>
+					<h3>DevOps Support Technician III <span class="atCompany">RPM Technologies</span></h3>
 					<p class="subDetails">Mar 2021 &ndash; Oct 2023 &middot; Indianapolis &middot; Promoted from Tier 2</p>
 					<p>Architected DevOps automation for a managed IT service desk supporting 2,000+ endpoints across cloud, on-prem, and hybrid environments.</p>
 					<ul class="roleBullets">
@@ -153,7 +392,7 @@
 					</ul>
 				</article>
 				<article>
-					<h2>Full Stack Software Developer <span class="atCompany">School of Science, IUPUI</span></h2>
+					<h3>Full Stack Software Developer <span class="atCompany">School of Science, IUPUI</span></h3>
 					<p class="subDetails">Jan 2018 &ndash; Jul 2019</p>
 					<p>Built and maintained internal web tools used by ~100 department members across varying roles.</p>
 					<ul class="roleBullets">
@@ -162,7 +401,7 @@
 					</ul>
 				</article>
 				<article>
-					<h2>Teacher's Assistant <span class="atCompany">IUPUI</span></h2>
+					<h3>Teacher's Assistant <span class="atCompany">IUPUI</span></h3>
 					<p class="subDetails">Aug 2017 &ndash; Dec 2018</p>
 					<p>Facilitated PLTL recitations for 30 CS students.</p>
 					<ul class="roleBullets">
@@ -171,20 +410,15 @@
 					</ul>
 				</article>
 			</div>
-			<div class="clear"></div>
 		</section>
 
 		<!-- ── Lane A: Professional Systems & Internal Tools ── -->
-		<section>
-			<div class="sectionTitle">
-				<h1>Professional Systems</h1>
-			</div>
-
+		<section id="systems" aria-labelledby="systems-title">
+			<div class="sectionTitle"><h2 id="systems-title">Professional Systems</h2></div>
 			<div class="sectionContent">
 				<p class="laneNote"><i data-feather="lock"></i> Selected professional engineering work &mdash; sanitized capability summaries, not source code.</p>
 
 				<div class="caseGrid">
-
 					<div class="caseStudy">
 						<div class="caseTop">
 							<span class="caseTag">Python &middot; Streaming</span>
@@ -224,253 +458,77 @@
 						<p>Source of truth for support ops: runbooks, deployment automation, workstation provisioning, and tooling that makes day-to-day support repeatable and teachable across a team.</p>
 						<div class="caseFoot"><span class="caseRole">Builder / Maintainer</span> Operational knowledge systems</div>
 					</div>
-
 				</div>
 			</div>
-			<div class="clear"></div>
-		</section>
-
-		<!-- ── Lane B: Public Engineering Portfolio ─────────── -->
-		<section>
-			<div class="sectionTitle">
-				<h1>Public Portfolio</h1>
-			</div>
-
-			<div class="sectionContent">
-				<p class="laneNote">Personal, open-source projects &mdash; live tools, demos, and source-backed work.</p>
-				<a class="portfolioDoor" href="https://spillerstech.us" target="_blank" rel="noopener"><strong>Want the productized version?</strong> Visit the Spillers Technology studio &mdash; pilots, downloads, support, and all. <i data-feather="arrow-up-right"></i></a>
-
-				<div class="portfolioGroup">
-				<h4 class="groupHeading">Spillers Technology <span>&middot; the product suite</span></h4>
-				<div class="projectGrid">
-
-					<div class="projectCardWrapper">
-						<a href="https://spillerstech.us/PartnerCenterBridge/" class="projectCard" target="_blank" rel="noopener">
-							<div class="projectCardFront">
-								<div class="projectLang">ASP.NET Core &middot; React &middot; Microsoft Graph &middot; Partner Center</div>
-								<h3>Partner Center Bridge</h3>
-								<p>Cross-tenant MSP command center. An ASP.NET Core API plus React SPA that fronts Microsoft Graph and Partner Center so Intune, identity, and customer-tenant work becomes repeatable instead of portal archaeology.</p>
-								<span class="projectLink"><i data-feather="external-link"></i> spillerstech.us/PartnerCenterBridge</span>
-							</div>
-							<div class="projectCardBack">
-								<p class="jokeSetup">What did the admin say after one clean tenant switch?</p>
-								<p class="jokePunchline">Finally, a portal with a bridge.</p>
-							</div>
-						</a>
-					</div>
-
-					<div class="projectCardWrapper">
-						<a href="https://spillerstech.us/RetroSpool/" class="projectCard" target="_blank" rel="noopener">
-							<div class="projectCardFront">
-								<div class="projectLang">Spring Boot 3 &middot; Java 21 &middot; JTOpen &middot; PostgreSQL &middot; MIT</div>
-								<h3>RetroSpool</h3>
-								<p>Spool files off the AS/400, straight to PDF. A headless service that polls IBM i output queues over JTOpen, detects and splits PCL, and renders clean PDFs through a GhostPDL sidecar &mdash; no printer sessions or terminal emulation required.</p>
-								<span class="projectLink"><i data-feather="external-link"></i> spillerstech.us/RetroSpool</span>
-							</div>
-							<div class="projectCardBack">
-								<p class="jokeSetup">Why did the spool file finally leave the OUTQ?</p>
-								<p class="jokePunchline">&ldquo;I heard there was a PDF on the other side.&rdquo;</p>
-							</div>
-						</a>
-					</div>
-
-					<div class="projectCardWrapper">
-						<a href="https://spillerstech.us/AnchorDesk/" class="projectCard" target="_blank" rel="noopener">
-							<div class="projectCardFront">
-								<div class="projectLang">React &middot; Fastify &middot; Prisma &middot; PostgreSQL &middot; MIT</div>
-								<h3>AnchorDesk</h3>
-								<p>Ticketing that knows the machines behind the ticket. A local-first, self-hosted helpdesk for MSPs and IT teams with device discovery, RMM actions, full audit history, and built-in MCP support.</p>
-								<span class="projectLink"><i data-feather="external-link"></i> spillerstech.us/AnchorDesk</span>
-							</div>
-							<div class="projectCardBack">
-								<p class="jokeSetup">What did the technician say to the ticket?</p>
-								<p class="jokePunchline">&ldquo;Why so clicky?&rdquo;</p>
-							</div>
-						</a>
-					</div>
-
-					<div class="projectCardWrapper">
-						<a href="https://spillerstech.us/netviz/" class="projectCard" target="_blank" rel="noopener">
-							<div class="projectCardFront">
-								<div class="projectLang">Go &middot; Wails &middot; React &middot; MIT</div>
-								<h3>NetViz</h3>
-								<p>See everything on your LAN in seconds. A cross-platform network scanner and visualizer &mdash; live device discovery, grouped graphs, monitor mode, and scan history on a fast native Go engine. One download. No agents, no accounts, no Nmap.</p>
-								<span class="projectLink"><i data-feather="external-link"></i> spillerstech.us/netviz</span>
-							</div>
-							<div class="projectCardBack">
-								<p class="jokeSetup">What did NetViz say to the device that wouldn&rsquo;t respond?</p>
-								<p class="jokePunchline">&ldquo;You can ping, but you can&rsquo;t hide.&rdquo;</p>
-							</div>
-						</a>
-					</div>
-
-					<div class="projectCardWrapper">
-						<a href="https://spillerstech.us/ComFlow/" class="projectCard" target="_blank" rel="noopener">
-							<div class="projectCardFront">
-								<div class="projectLang">TypeScript &middot; SIP &middot; STT &middot; LLM</div>
-								<h3>ComFlow</h3>
-								<p>Voicemail, but make it useful. A self-hosted voicemail regulator that receives calls over SIP, transcribes and summarizes them, and gives your team a golden inbox to review &mdash; then syncs the ones worth acting on into AnchorDesk as tickets.</p>
-								<span class="projectLink"><i data-feather="external-link"></i> spillerstech.us/ComFlow</span>
-							</div>
-							<div class="projectCardBack">
-								<p class="jokeSetup">What did the voicemail say at its performance review?</p>
-								<p class="jokePunchline">&ldquo;I&rsquo;ve been meaning to get back to you.&rdquo;</p>
-							</div>
-						</a>
-					</div>
-
-				</div>
-				</div>
-
-				<div class="portfolioGroup lab">
-				<h4 class="groupHeading">spilloid <span>&middot; personal lab</span></h4>
-				<div class="projectGrid">
-
-					<div class="projectCardWrapper">
-						<a href="https://spilloid.github.io/Twove/" class="projectCard" target="_blank" rel="noopener">
-							<div class="projectCardFront">
-								<div class="projectLang">C++17 &middot; SDL2 &middot; WebAssembly</div>
-								<h3>Twove</h3>
-								<p>The CS degree flex. A C++17 game engine where every entity is a Sprite and every behavior a Visitor &mdash; no entity subclasses, no switch-on-type, just clean double dispatch. Two virtual calls per sprite per frame, playable in the browser via WebAssembly.</p>
-								<span class="projectLink"><i data-feather="external-link"></i> spilloid.github.io/Twove</span>
-							</div>
-							<div class="projectCardBack">
-								<p class="jokeSetup">Why did the game engine refuse therapy?</p>
-								<p class="jokePunchline">It already had double dispatch figured out.</p>
-							</div>
-						</a>
-					</div>
-
-					<div class="projectCardWrapper">
-						<a href="https://spilloid.github.io/pool_sim/" class="projectCard" target="_blank" rel="noopener">
-							<div class="projectCardFront">
-								<div class="projectLang">TypeScript &middot; Node.js &middot; Phaser</div>
-								<h3>pool_sim</h3>
-								<p>Physics, but make it fun. A Phaser-powered billiards prototype focused on understandable, coefficient-driven physics over full rule simulation.</p>
-								<span class="projectLink"><i data-feather="external-link"></i> spilloid.github.io/pool_sim</span>
-							</div>
-							<div class="projectCardBack">
-								<p class="jokeSetup">What did the cue ball say before the big shot?</p>
-								<p class="jokePunchline">I&rsquo;m on a roll.</p>
-							</div>
-						</a>
-					</div>
-
-					<div class="projectCardWrapper">
-						<a href="https://spilloid.github.io/Deciwatcher/" class="projectCard" target="_blank" rel="noopener">
-							<div class="projectCardFront">
-								<div class="projectLang">CSS &middot; IoT &middot; MIT</div>
-								<h3>Deciwatcher</h3>
-								<p>Noise mapping at scale. Distributed ambient-noise monitoring for shared workspaces that builds a real-time acoustic map. Surveillance, but for your noisy neighbors.</p>
-								<span class="projectLink"><i data-feather="external-link"></i> spilloid.github.io/Deciwatcher</span>
-							</div>
-							<div class="projectCardBack">
-								<p class="jokeSetup">What do you call a noise surveillance system?</p>
-								<p class="jokePunchline">A sound investment.</p>
-							</div>
-						</a>
-					</div>
-
-					<div class="projectCardWrapper">
-						<a href="https://spilloid.github.io/JokeBot/" class="projectCard" target="_blank" rel="noopener">
-							<div class="projectCardFront">
-								<div class="projectLang">Python &middot; Docker &middot; MIT</div>
-								<h3>JokeBot</h3>
-								<p>Because someone had to containerize dad jokes. A lightweight Flask API serving randomized jokes &mdash; RESTful, Dockerized, and funnier than it has any right to be.</p>
-								<span class="projectLink"><i data-feather="external-link"></i> spilloid.github.io/JokeBot</span>
-							</div>
-							<div class="projectCardBack">
-								<p class="jokeSetup">Why was the joke API never lonely?</p>
-								<p class="jokePunchline">It always had great delivery.</p>
-							</div>
-						</a>
-					</div>
-
-					<div class="projectCardWrapper">
-						<a href="https://github.com/spilloid/spilloid.github.io" class="projectCard" target="_blank" rel="noopener">
-							<div class="projectCardFront">
-								<div class="projectLang">HTML &middot; CSS &middot; Canvas</div>
-								<h3>spilloid.github.io</h3>
-								<p>This resume site. Hand-built static page with a custom canvas campfire and zero frameworks &mdash; because the portfolio should itself be a portfolio piece.</p>
-								<span class="projectLink"><i data-feather="github"></i> spilloid/spilloid.github.io</span>
-							</div>
-							<div class="projectCardBack">
-								<p class="jokeSetup">Why did the resume site refuse a template?</p>
-								<p class="jokePunchline">It had too much character.</p>
-							</div>
-						</a>
-					</div>
-
-				</div>
-				</div>
-			</div>
-			<div class="clear"></div>
 		</section>
 
 		<!-- ── Skills ───────────────────────────────────────── -->
-		<section>
-			<div class="sectionTitle">
-				<h1>Skills</h1>
-			</div>
-
+		<section id="skills" aria-labelledby="skills-title">
+			<div class="sectionTitle"><h2 id="skills-title">Skills</h2></div>
 			<div class="sectionContent">
 				<p class="lead">The toolbox behind the work above &mdash; languages, platforms, and practices I reach for.</p>
 				<div class="skillGroups">
 					<div class="skillGroup">
-						<h4>Support Engineering &amp; Operations</h4>
+						<h3>Support Engineering &amp; Operations</h3>
 						<ul class="skillTags">
 							<li>Technical Support</li><li>Escalation Handling</li><li>Workflow Triage</li><li>Scan-Station Support</li><li>Runbooks</li><li>Endpoint Provisioning</li><li>Documentation</li>
 						</ul>
 					</div>
 					<div class="skillGroup">
-						<h4>Automation &amp; Internal Tools</h4>
+						<h3>Automation &amp; Internal Tools</h3>
 						<ul class="skillTags">
-							<li>Python</li><li>PowerShell</li><li>Go</li><li>C#</li><li>ASP.NET Core</li><li>.NET / WinForms</li><li>TypeScript</li><li>Browser Automation</li><li>CLI Tools</li><li>Desktop Utilities</li>
+							<li>Python</li><li>PowerShell</li><li>Go</li><li>C#</li><li>Java</li><li>TypeScript</li><li>.NET / WinForms</li><li>Browser Automation</li><li>CLI Tools</li><li>Desktop Utilities</li>
 						</ul>
 					</div>
 					<div class="skillGroup">
-						<h4>Data &amp; Observability</h4>
+						<h3>Product Engineering</h3>
 						<ul class="skillTags">
-							<li>DuckDB</li><li>dbt</li><li>Postgres</li><li>Grafana</li><li>Dashboards</li><li>Support Metrics</li><li>Reporting Pipelines</li><li>KPI Tracking</li>
+							<li>React</li><li>Node.js</li><li>Fastify</li><li>Prisma</li><li>ASP.NET Core</li><li>Spring Boot</li><li>REST APIs</li><li>SIP / Voicemail Workflows</li><li>Release Engineering</li>
 						</ul>
 					</div>
 					<div class="skillGroup">
-						<h4>Infrastructure &amp; Systems</h4>
+						<h3>Data &amp; Observability</h3>
 						<ul class="skillTags">
-							<li>Windows</li><li>Linux</li><li>Docker</li><li>GitHub Actions</li><li>Azure</li><li>Microsoft Graph</li><li>Partner Center API</li><li>Homelab</li><li>RMM</li><li>Monitoring</li><li>Networking</li><li>Proxmox</li>
+							<li>PostgreSQL</li><li>DuckDB</li><li>dbt</li><li>Grafana</li><li>Dashboards</li><li>Support Metrics</li><li>Reporting Pipelines</li><li>KPI Tracking</li>
 						</ul>
 					</div>
 					<div class="skillGroup">
-						<h4>AI-Assisted Engineering</h4>
+						<h3>Infrastructure &amp; Systems</h3>
 						<ul class="skillTags">
-							<li>Claude Code</li><li>AI Prototyping</li><li>Doc Generation</li><li>Test Planning</li><li>Code Review</li><li>Workflow Design</li>
+							<li>Windows</li><li>Linux</li><li>Docker</li><li>Kubernetes</li><li>GitHub Actions</li><li>Azure</li><li>Microsoft Graph</li><li>Intune</li><li>Partner Center API</li><li>Code Signing</li><li>RMM</li><li>Monitoring</li><li>Networking</li><li>Proxmox</li><li>Homelab</li>
+						</ul>
+					</div>
+					<div class="skillGroup">
+						<h3>AI-Assisted Engineering &amp; Agents</h3>
+						<ul class="skillTags">
+							<li>Claude Code</li><li>MCP Servers</li><li>Agent Guardrails</li><li>Human-in-the-Loop Design</li><li>Adversarial Code Review</li><li>AI Prototyping</li><li>Test Planning</li><li>Doc Generation</li><li>Workflow Design</li>
 						</ul>
 					</div>
 				</div>
 			</div>
-			<div class="clear"></div>
 		</section>
 
 		<!-- ── Education ────────────────────────────────────── -->
-		<section>
-			<div class="sectionTitle">
-				<h1>Education</h1>
-			</div>
-
+		<section id="education" aria-labelledby="education-title">
+			<div class="sectionTitle"><h2 id="education-title">Education</h2></div>
 			<div class="sectionContent">
 				<article>
-					<h2>Bachelor of Science, Computer Science</h2>
+					<h3>Bachelor of Science, Computer Science</h3>
 					<p class="subDetails">Purdue School of Science, Indiana University-Purdue University, Indianapolis, IN</p>
 					<p class="subDetails">Minor in Mathematics | Honors | GPA 3.8</p>
 				</article>
 			</div>
-			<div class="clear"></div>
 		</section>
 
-	</div>
+	</main>
+
+	<footer class="pageFoot">
+		<p>Hand-built, no frameworks. <a href="https://github.com/spilloid/spilloid.github.io" target="_blank" rel="noopener">Source on GitHub</a>.</p>
+		<p>This site uses session replay with inputs, emails, and numbers obscured. <a href="https://spillerstech.us/privacy.html" target="_blank" rel="noopener">Privacy notice</a>.</p>
+	</footer>
 </div>
 <script>
-	feather.replace()
+	window.addEventListener('DOMContentLoaded', function () { if (window.feather) feather.replace(); });
 </script>
 <script>
 (function () {
