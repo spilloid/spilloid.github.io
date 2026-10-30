@@ -18,11 +18,13 @@ The page is organized to read as evidence, not a GitHub dump:
    in-page nav.
 2. **What I Build** — six categories of work, including agent-ready (MCP) software and
    release discipline, plus an honest note on title vs. scope.
-3. **Shipped Software** (Lane B) — personal work with public source, in three groups, each card with
+3. **Shipped Software** (Lane B) — work with public source, in four groups, each card with
    its repo, stack, and a maturity pill (Released / Pre-1.0 / Prototype):
-   *Ops & support software* (the Spillers Technology suite plus SpoolSmith), *AI & agent
-   engineering* (player-2, Corporate-Simulator), and the *Engineering lab* (flip-card jokes,
-   hover-capable devices only).
+   *Spillers Technology products* (AnchorDesk, Partner Center Bridge, ComFlow, NetViz,
+   RetroSpool; OpsQuest as a one-liner), *Personal projects* (SpoolSmith, kvm-it, rsRewind,
+   minute2win — these pills also carry the version declared on each repo's main branch, so
+   update them on release), *AI & agent engineering* (player-2, Corporate-Simulator), and the
+   *Engineering lab* (flip-card jokes, hover-capable devices only).
 4. **Experience** — professional roles, with One View detailed via bullets.
 5. **Professional Systems** (Lane A) — sanitized case studies of employer-owned, private
    internal tooling. No source links; descriptions only.
@@ -66,7 +68,12 @@ Or just open `docs/index.html` directly in a browser.
 
 - Project cards are generated from the repos, not memory: check the repo README, LICENSE, and latest release before changing a stack line, license, or maturity pill. Twove and pool_sim have no LICENSE file, so no license is claimed.
 - OpenReplay session replay runs on https only and is disclosed in the footer and at spillerstech.us/privacy.html.
-- Tone is confident, concrete, evidence-driven — receipts over adjectives.
+- Tone is confident, concrete, evidence-driven — receipts over adjectives. No superlatives,
+  no claim made twice.
+- Personal projects are not Spillers Technology products and don't appear on the storefront;
+  don't describe them as used at any employer.
+- `resume.html` (repo root) is not served by Pages. `docs/Joseph_Spillers_Resume.pdf` (the
+  linked download) is a separate file and does not change when `resume.html` does.
 - Lane A descriptions are sanitized: no client names, dealer numbers, internal
   hostnames, or anything that shouldn't be public.
 - The deployed version is a resume first and a code flex second.
