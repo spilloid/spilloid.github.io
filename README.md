@@ -23,7 +23,9 @@ The page is organized to read as evidence, not a GitHub dump:
    **update the version pills on release**.
 3. **How I Ship** — six engineering practices with evidence, and an honest note on title
    vs. scope.
-4. **Experience** — professional roles, with One View detailed via bullets.
+4. **Experience** — Moser Consulting first (Service Desk Technician, Aug 2026–present),
+   emphasizing enterprise systems, software development, endpoint security and MCP
+   integrations, followed by earlier roles including One View.
 5. **Professional Systems** (Lane A) — sanitized case studies of employer-owned, private
    internal tooling. No source links; descriptions only.
 6. **Skills** — grouped by value (support, automation, product, data, infra, AI/agents).
@@ -70,8 +72,13 @@ Or just open `docs/index.html` directly in a browser.
   no claim made twice.
 - Personal projects are not Spillers Technology products and don't appear on the storefront;
   don't describe them as used at any employer.
-- `resume.html` (repo root) is not served by Pages. `docs/Joseph_Spillers_Resume.pdf` (the
-  linked download) is a separate file and does not change when `resume.html` does.
+- `resume.html` (repo root) is the print source and is not served by Pages. Regenerate
+  both linked downloads after editing it with `powershell.exe -NoProfile -ExecutionPolicy
+  Bypass -File .\scripts\build-resume-pdfs.ps1` (requires Chrome on Windows). The script
+  checks that `docs/Joseph_Spillers_Resume.pdf` is one page and
+  `docs/Joseph_Spillers_Resume_Extended.pdf` is two pages. The short version focuses on
+  recent roles, skills and education; the extended version adds earlier experience
+  and projects.
 - Lane A descriptions are sanitized: no client names, dealer numbers, internal
   hostnames, or anything that shouldn't be public.
 - The deployed version is a resume first and a code flex second.

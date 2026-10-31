@@ -21,7 +21,7 @@
 
   @page {
     size: letter;
-    margin: 0.5in 0.55in;
+    margin: 0.36in 0.55in;
   }
 
   html, body {
@@ -31,8 +31,8 @@
     color: var(--ink);
     font-family: 'Lato', 'Helvetica Neue', Arial, sans-serif;
     font-weight: 400;
-    font-size: 9.6pt;
-    line-height: 1.4;
+    font-size: 9.3pt;
+    line-height: 1.34;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
@@ -85,7 +85,7 @@
   }
 
   /* ── Sections ───────────────────────────────────── */
-  section { margin-top: 13px; }
+  section { margin-top: 10px; }
 
   h2.section {
     font-family: 'Rokkitt', Georgia, serif;
@@ -139,10 +139,18 @@
   ul.bullets li::marker { color: var(--accent); }
 
   /* ── Two-column lower area ──────────────────────── */
-  .cols { display: flex; gap: 26px; break-before: page; }
+  .cols { display: flex; gap: 26px; }
+  .p1-tail { margin-top: 10px; }
+  .skill-grid { display: grid; grid-template-columns: 1fr 1fr; column-gap: 26px; }
+  .p1-tail .edu { display: flex; gap: 26px; }
+  .p1-tail .edu > div { flex: 1 1 50%; }
+  /* Page 2 is optional: projects and extended experience. Print with #one for the one-page cut. */
+  .page-two { break-before: page; }
+  html.one .page-two { display: none; }
   section, .job, .entry { break-inside: avoid; }
   .col-main { flex: 1 1 62%; min-width: 0; }
   .col-side { flex: 1 1 38%; min-width: 0; }
+  .page-two .col-main, .page-two .col-side { flex-basis: 50%; }
 
   /* ── Case studies / projects ────────────────────── */
   .entry { margin-bottom: 7px; }
@@ -188,7 +196,7 @@
   }
 
   /* ── Skills ─────────────────────────────────────── */
-  .skill-group { margin-bottom: 6px; }
+  .skill-group { margin-bottom: 4px; }
   .skill-group h4 {
     font-family: 'Rokkitt', Georgia, serif;
     font-weight: 600;
@@ -213,13 +221,14 @@
 
   a { color: inherit; }
 </style>
+<script>if (location.hash === "#one") document.documentElement.classList.add("one");</script>
 </head>
 <body>
 <div class="page">
 
   <header>
     <h1 class="name">Joseph Spillers</h1>
-    <p class="title">Support Automation &amp; Internal Tools Engineer</p>
+    <p class="title">Systems, Automation &amp; Software Engineering</p>
     <p class="tagline">I turn support pain into working tools.</p>
     <p class="contact">
       Indianapolis, IN
@@ -234,12 +243,10 @@
   <section>
     <h2 class="section">Summary</h2>
     <p class="summary">
-      CS-trained support specialist who works at the intersection of <strong>technical support, operations,
-      automation, and internal tooling</strong> — strongest where the problem doesn't sit cleanly inside one
-      system. I own the messy middle: the scripts, dashboards, data checks, and workflow fixes that make support
-      and production operations <strong>observable, repeatable, and automatable</strong>. Five+ years converting
-      fragile manual workflows into testable software with Python, PowerShell, and Go. B.S. Computer Science
-      (Honors, 3.8 GPA), CompTIA Network+, Azure Fundamentals (AZ-900).
+      Service Desk Technician at Moser Consulting combining <strong>enterprise systems administration,
+      software development, endpoint security and AI workflow automation</strong>. Five+ years turning
+      manual workflows into reusable tools, dashboards and integrations. Build and deploy software in
+      Rust, Python, PowerShell and Go to improve service delivery and make operations repeatable.
     </p>
   </section>
 
@@ -248,18 +255,27 @@
 
     <div class="job">
       <div class="job-head">
-        <span class="job-role">Help Desk Support Specialist <span class="job-co">· One View, Inc.</span></span>
-        <span class="job-meta">Dec 2025 – Present · Indianapolis (Hybrid)</span>
+        <span class="job-role">Service Desk Technician <span class="job-co">· Moser Consulting</span></span>
+        <span class="job-meta">Aug 2026 – Present · Indianapolis</span>
       </div>
-      <p class="job-blurb">Support and harden dealership document-management workflows — scan stations, WebScan,
-        Vault, PaperFlow, spooler services, data feeds, and production processing — and build the tooling that
-        makes them faster and less human-fragile.</p>
       <ul class="bullets">
-        <li>Built internal support tooling that standardized workstation setup, scanner workflows, and endpoint decommissioning.</li>
-        <li>Stood up operational dashboards surfacing live support and production metrics so issues are caught before they escalate.</li>
-        <li>Wrote automation that eliminated repetitive manual tasks and improved consistency across endpoints.</li>
-        <li>Mined case data and saved searches to flag missing feeds, no-scan accounts, and recurring issues early.</li>
-        <li>Authored runbooks and documentation for repeatable workflows and escalation paths.</li>
+        <li>Provide Tier 2/3-level support across Windows, macOS, Microsoft 365, Entra ID, Intune, Active Directory and networking in a multi-client MSP environment.</li>
+        <li>Provision devices, manage identity and access, and resolve deployment, licensing, BitLocker, endpoint protection and compliance issues.</li>
+        <li>Develop and deploy Rust, Python and PowerShell applications and automation to eliminate repetitive work, using AI-assisted development.</li>
+        <li>Build MCP integrations for Jira time tracking and Microsoft 365 administration, and tools for network discovery, remote access, printer deployment and device provisioning.</li>
+        <li>Turn recurring issues into reusable solutions and documentation; collaborate with engineering teams and leadership on technical improvements.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <span class="job-role">Help Desk Support Specialist <span class="job-co">· One View, Inc.</span></span>
+        <span class="job-meta">Dec 2025 – 2026 · Indianapolis (Hybrid)</span>
+      </div>
+      <p class="job-blurb">Built tooling for dealership document-management workflows, scan stations, data feeds and production processing.</p>
+      <ul class="bullets">
+        <li>Automated workstation setup, scanner workflows and endpoint decommissioning; documented repeatable procedures and escalation paths.</li>
+        <li>Built operational dashboards and data checks to surface production metrics, missing feeds, no-scan accounts and recurring issues.</li>
       </ul>
     </div>
 
@@ -268,12 +284,10 @@
         <span class="job-role">Technical Support Specialist II <span class="job-co">· Resultant</span></span>
         <span class="job-meta">Oct 2023 – May 2025 · Remote</span>
       </div>
-      <p class="job-blurb">Tier 2 technical support at a data &amp; technology consulting firm serving public-sector
-        and enterprise clients.</p>
+      <p class="job-blurb">Tier 2 technical support for public-sector and enterprise clients.</p>
       <ul class="bullets">
-        <li>Diagnosed and resolved complex software and infrastructure issues across diverse client environments.</li>
-        <li>Managed escalation workflows and drove systemic defects to resolution with engineering.</li>
-        <li>Improved the knowledge base to cut repeat ticket volume and accelerate time to resolution.</li>
+        <li>Resolved complex software and infrastructure issues; managed escalations and systemic defects with engineering.</li>
+        <li>Improved the knowledge base to reduce repeat tickets and accelerate resolution.</li>
       </ul>
     </div>
 
@@ -282,13 +296,66 @@
         <span class="job-role">DevOps Support Technician III <span class="job-co">· RPM Technologies</span></span>
         <span class="job-meta">Mar 2021 – Oct 2023 · Indianapolis</span>
       </div>
-      <p class="job-blurb">Architected DevOps automation for a managed-services IT desk supporting 2,000+ endpoints
-        across cloud, on-prem, and hybrid environments.</p>
+      <p class="job-blurb">Architected DevOps automation for 2,000+ endpoints across cloud, on-prem and hybrid environments.</p>
       <ul class="bullets">
-        <li>Converted complex manual procedures into single-push deployment scripts (PowerShell, Bash), increasing service-desk efficiency ~30%.</li>
-        <li>Built dashboarding and proactive alerting that maximized technician throughput and reduced client downtime ~25%.</li>
-        <li>Introduced pre-production error catching that reduced the volume of incidents reaching clients.</li>
-        <li>Promoted from Tier 2 to Tier 3 DevOps within 18 months; authored SOPs and training documentation.</li>
+        <li>Built PowerShell/Bash deployment automation, increasing service-desk efficiency ~30%; dashboards and alerting reduced client downtime ~25%.</li>
+        <li>Caught errors before production; promoted from Tier 2 to Tier 3 DevOps within 18 months and authored SOPs and training documentation.</li>
+      </ul>
+    </div>
+
+  </section>
+
+  <!-- The rest of page 1: skills and education, so page 1 stands alone as the resume. -->
+  <div class="p1-tail">
+      <section style="margin-top:0;">
+        <h2 class="section">Skills</h2>
+        <div class="skill-grid">
+
+        <div class="skill-group">
+          <h4>Support Engineering &amp; Ops</h4>
+          <div class="skill-list">Technical support, escalation handling, workflow triage, endpoint provisioning, runbooks, documentation</div>
+        </div>
+        <div class="skill-group">
+          <h4>Automation &amp; Internal Tools</h4>
+          <div class="skill-list">Python, PowerShell, Go, Rust, C#, ASP.NET Core, .NET / WinForms, TypeScript, Bash, browser automation, CLI &amp; desktop utilities</div>
+        </div>
+        <div class="skill-group">
+          <h4>Data &amp; Observability</h4>
+          <div class="skill-list">DuckDB, dbt, Postgres, Grafana, dashboards, reporting pipelines, KPI tracking</div>
+        </div>
+        <div class="skill-group">
+          <h4>Infrastructure &amp; Systems</h4>
+          <div class="skill-list">Windows, macOS, Linux, Microsoft 365, Entra ID, Active Directory, Intune, BitLocker, endpoint security, Docker, Azure, Microsoft Graph, RMM, networking</div>
+        </div>
+        <div class="skill-group">
+          <h4>AI-Assisted Engineering</h4>
+          <div class="skill-list">MCP integrations, Jira workflows, Microsoft 365 automation, Claude Code, AI prototyping, test planning, code review</div>
+        </div>
+        <!-- Education fills the grid's sixth cell, so page 1 stays one page. -->
+        <div class="skill-group">
+          <h4>Education &amp; Certifications</h4>
+          <div class="skill-list"><strong>B.S. Computer Science</strong>, IUPUI · Honors · GPA 3.8 · Math minor</div>
+          <div class="skill-list">CompTIA Network+ · Azure AZ-900 · CKA (in progress)</div>
+        </div>
+        </div>
+      </section>
+  </div>
+
+  <!-- Page 2 (optional): extended experience and projects. Left out of the one-page PDF. -->
+  <div class="page-two">
+
+  <section style="margin-top:0;">
+    <h2 class="section">Extended Experience</h2>
+
+    <div class="job">
+      <div class="job-head">
+        <span class="job-role">Assistant Manager (ASM) <span class="job-co">· Amazon, Ultra Fast Fresh</span></span>
+        <span class="job-meta">Sep 2019 – 2020</span>
+      </div>
+      <ul class="bullets">
+        <li>Led a shift of 60 associates to on-time delivery targets.</li>
+        <li>Wrote tools that extended the life of aging inventory software, rolled out across multiple Ultra Fast Fresh warehouses.</li>
+        <li>Implemented a 5S Lean initiative; licensed powered industrial truck (PIT) operator.</li>
       </ul>
     </div>
 
@@ -361,6 +428,14 @@
       </section>
 
       <section>
+        <h2 class="section">Homelab</h2>
+        <div class="skill-list">Proxmox VE hypervisor running OPNsense, TrueNAS, UniFi Gateway, and K8s-orchestrated
+          services — hands-on infrastructure experimentation and deployment-workflow validation.</div>
+      </section>
+
+    </div>
+    <div class="col-side">
+      <section style="margin-top:0;">
         <h2 class="section">Open-Source Projects</h2>
         <p class="lane-note">Spillers Technology products at <a href="https://github.com/Spillers-Technology">github.com/Spillers-Technology</a> · personal projects at <a href="https://github.com/spilloid">github.com/spilloid</a>.</p>
 
@@ -437,50 +512,9 @@
             ambient-noise mapping concept. Full set at github.com/spilloid.</p>
         </div>
       </section>
-
     </div>
-    <div class="col-side">
+  </div>
 
-      <section style="margin-top:0;">
-        <h2 class="section">Skills</h2>
-
-        <div class="skill-group">
-          <h4>Support Engineering &amp; Ops</h4>
-          <div class="skill-list">Technical support, escalation handling, workflow triage, endpoint provisioning, runbooks, documentation</div>
-        </div>
-        <div class="skill-group">
-          <h4>Automation &amp; Internal Tools</h4>
-          <div class="skill-list">Python, PowerShell, Go, Rust, C#, ASP.NET Core, .NET / WinForms, TypeScript, Bash, browser automation, CLI &amp; desktop utilities</div>
-        </div>
-        <div class="skill-group">
-          <h4>Data &amp; Observability</h4>
-          <div class="skill-list">DuckDB, dbt, Postgres, Grafana, dashboards, reporting pipelines, KPI tracking</div>
-        </div>
-        <div class="skill-group">
-          <h4>Infrastructure &amp; Systems</h4>
-          <div class="skill-list">Windows, Linux, Docker, Proxmox, GitHub Actions, Azure, Microsoft Graph, Partner Center API, RMM, monitoring, networking</div>
-        </div>
-        <div class="skill-group">
-          <h4>AI-Assisted Engineering</h4>
-          <div class="skill-list">Claude Code, AI prototyping, doc generation, test planning, code review</div>
-        </div>
-      </section>
-
-      <section>
-        <h2 class="section">Education</h2>
-        <div class="edu-school">B.S. Computer Science</div>
-        <div class="edu-line">Purdue School of Science, IUPUI — Indianapolis, IN</div>
-        <div class="edu-line">Minor in Mathematics · Honors · GPA 3.8</div>
-        <div class="certs"><strong>Certifications:</strong> CompTIA Network+ · Microsoft Azure Fundamentals (AZ-900) · CKA (in progress)</div>
-      </section>
-
-      <section>
-        <h2 class="section">Homelab</h2>
-        <div class="skill-list">Proxmox VE hypervisor running OPNsense, TrueNAS, UniFi Gateway, and K8s-orchestrated
-          services — hands-on infrastructure experimentation and deployment-workflow validation.</div>
-      </section>
-
-    </div>
   </div>
 
 </div>
